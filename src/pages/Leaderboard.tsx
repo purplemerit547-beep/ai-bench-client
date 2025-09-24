@@ -135,21 +135,30 @@ function ScoreBar({ score }: { score: number }) {
 function LicenseBadge({ license }: { license: string }) {
   if (license === "API") {
     return (
-      <Badge className="bg-brand-100 text-brand-800 hover:bg-brand-100 border-0 rounded-lg px-2 py-1 text-xs font-semibold">
+      <Badge
+        className="border-0 rounded-lg px-2 py-1 text-xs font-semibold"
+        style={{ backgroundColor: "#F1EBFF", color: "#4B00A8" }}
+      >
         API
       </Badge>
     );
   }
   if (license === "Open Source") {
     return (
-      <Badge className="bg-green-100 text-green-800 hover:bg-green-100 border-0 rounded-lg px-2 py-1 text-xs font-semibold">
+      <Badge
+        className="border-0 rounded-lg px-2 py-1 text-xs font-semibold"
+        style={{ backgroundColor: "#D1FADF", color: "#027A48" }}
+      >
         Open Source
       </Badge>
     );
   }
   if (license === "Commercial") {
     return (
-      <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100 border-0 rounded-lg px-2 py-1 text-xs font-semibold">
+      <Badge
+        className="border-0 rounded-lg px-2 py-1 text-xs font-semibold"
+        style={{ backgroundColor: "#D1E9FF", color: "#175CD3" }}
+      >
         Commercial
       </Badge>
     );
@@ -296,7 +305,7 @@ export default function Leaderboard() {
                     <th className="text-sm font-semibold leading-5 text-neutral-950 w-[120px] pl-5 text-left">
                       License
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 text-left pl-16">
                       Released
                     </th>
                     <th className="text-sm font-semibold leading-5 text-neutral-950 flex-1 flex justify-end text-left">
@@ -354,7 +363,7 @@ export default function Leaderboard() {
                           {model.license}
                         </span>
                       </td>
-                      <td className="text-sm font-normal leading-5 text-neutral-950 py-3">
+                      <td className="text-sm font-normal leading-5 text-neutral-950 py-3 pl-16">
                         {model.released}
                       </td>
                       <td className="flex gap-2 justify-end py-3">
