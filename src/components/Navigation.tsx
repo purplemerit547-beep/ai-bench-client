@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   return (
@@ -15,18 +16,18 @@ const Navigation = () => {
       </div>
       <div className="flex items-center justify-center w-full absolute left-0 top-0 h-full pointer-events-none">
         <div className="flex items-center gap-6 pointer-events-auto">
-          <button className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
+          <Link to="/" className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
             Home
-          </button>
-          <button className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
+          </Link>
+          <Link to="/leaderboard" className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
             Leaderboard
-          </button>
-          <button className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
+          </Link>
+          <Link to="/benchmarks" className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
             Benchmarks
-          </button>
-          <button className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
+          </Link>
+          <Link to="/pricing" className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
             Pricing
-          </button>
+          </Link>
         </div>
       </div>
       <div className="ml-auto flex items-center z-10">
