@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   return (
@@ -16,18 +16,47 @@ const Navigation = () => {
       </div>
       <div className="flex items-center justify-center w-full absolute left-0 top-0 h-full pointer-events-none">
         <div className="flex items-center gap-6 pointer-events-auto">
-          <Link to="/" className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200 hover:text-neutral-950 ${
+                isActive ? 'text-neutral-950 font-semibold' : 'text-[#717182]'
+              }`
+            }
+          >
             Home
-          </Link>
-          <Link to="/leaderboard" className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
+          </NavLink>
+          <NavLink
+            to="/leaderboard"
+            className={({ isActive }) =>
+              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200 hover:text-neutral-950 ${
+                isActive ? 'text-neutral-950 font-semibold' : 'text-[#717182]'
+              }`
+            }
+          >
             Leaderboard
-          </Link>
-          <Link to="/benchmarks" className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
+          </NavLink>
+          <NavLink
+            to="/benchmarks"
+            className={({ isActive }) =>
+              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200 hover:text-neutral-950 ${
+                isActive ? 'text-neutral-950 font-semibold' : 'text-[#717182]'
+              }`
+            }
+          >
             Benchmarks
-          </Link>
-          <Link to="/pricing" className="text-base font-normal leading-6 text-[#717182] cursor-pointer transition-colors duration-200 hover:text-neutral-950">
+          </NavLink>
+          <NavLink
+            to="/pricing"
+            className={({ isActive }) =>
+              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200 hover:text-neutral-950 ${
+                isActive ? 'text-neutral-950 font-semibold' : 'text-[#717182]'
+              }`
+            }
+          >
             Pricing
-          </Link>
+          </NavLink>
         </div>
       </div>
       <div className="ml-auto flex items-center z-10">
