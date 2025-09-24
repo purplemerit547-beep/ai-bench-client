@@ -21,7 +21,7 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({ categories, onCategoryC
           onClick={() => handleCategoryClick(category)}
           className={`h-[33px] flex items-center justify-center cursor-pointer transition-all duration-200 px-[16.66px] py-[8.66px] rounded-lg ${
             activeCategory === category
-              ? 'bg-gradient-to-r from-purple-600 to-blue-600'
+              ? 'bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)]'
               : 'bg-white hover:bg-gray-50'
           }`}
         >

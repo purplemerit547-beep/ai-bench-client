@@ -29,7 +29,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
   const progressWidth = (score / maxScore) * 100;
   
   const badgeColors = {
-    api: 'bg-purple-100 text-[#6E11B0]',
+    api: 'bg-[#B388F4] text-[#4A0FAE]',
     'open-source': 'bg-green-100 text-[#016630]'
   };
 
@@ -95,7 +95,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
         
         <div className="w-[319px] h-2 relative bg-[#F6F3FF] mb-4 rounded-full">
           <div 
-            className="h-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full border border-[#802BE2]"
+            className="h-2 bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-full border border-[#8A4DDF]"
             style={{ width: `${progressWidth}%` }}
           />
         </div>
@@ -122,7 +122,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
             </span>
           </button>
           
-          <button className="w-[157px] h-8 flex items-center justify-center cursor-pointer transition-all duration-200 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg hover:opacity-90">
+          <button className="w-[157px] h-8 flex items-center justify-center cursor-pointer transition-all duration-200 bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-lg hover:opacity-90">
             <span className="text-sm font-semibold leading-5 text-center text-white">
               Compare
             </span>

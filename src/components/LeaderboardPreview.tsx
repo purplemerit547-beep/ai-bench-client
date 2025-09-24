@@ -91,7 +91,7 @@ const LeaderboardPreview = () => {
             <div className="text-sm font-semibold leading-5 text-neutral-950 w-[120px] pl-5">
               License
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 flex-1 pl-[74px] max-md:pl-10">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 flex-1 flex justify-end">
               Actions
             </div>
           </div>
@@ -100,7 +100,7 @@ const LeaderboardPreview = () => {
             {leaderboardData.map((item, index) => (
               <div key={index} className="flex w-full h-[57px] items-center relative border-b-[0.667px] border-b-[rgba(0,0,0,0.10)] border-solid max-md:text-xs">
                 <div className={`w-[29px] h-[21px] flex items-center justify-center ml-2 rounded-lg ${
-                  item.rank === 1 ? 'bg-gradient-to-r from-purple-600 to-blue-600' : 'bg-[#F6F3FF]'
+                  item.rank === 1 ? 'bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)]' : 'bg-[#F1EBFF]'
                 }`}>
                   <span className={`text-xs font-semibold leading-4 text-center ${
                     item.rank === 1 ? 'text-white' : 'text-[#030213]'
@@ -132,14 +132,14 @@ const LeaderboardPreview = () => {
                   </span>
                 </div>
                 
-                <div className="flex-1 flex gap-2 pl-[74px] max-md:pl-10">
+                <div className="flex-1 flex gap-2 justify-end">
                   <button className="w-14 h-8 border flex items-center justify-center cursor-pointer transition-all duration-200 bg-white rounded-lg border-solid border-[rgba(0,0,0,0.10)] hover:bg-gray-50">
                     <span className="text-sm font-semibold leading-5 text-center text-neutral-950">
                       View
                     </span>
                   </button>
                   
-                  <button className="w-[82px] h-8 flex items-center justify-center cursor-pointer transition-all duration-200 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg hover:opacity-90">
+                  <button className="w-[82px] h-8 flex items-center justify-center cursor-pointer transition-all duration-200 bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-lg hover:opacity-90">
                     <span className="text-sm font-semibold leading-5 text-center text-white">
                       Compare
                     </span>
@@ -150,7 +150,7 @@ const LeaderboardPreview = () => {
           </div>
         </div>
         
-        <button className="w-[197px] h-9 flex items-center justify-center gap-[15.691px] cursor-pointer transition-all duration-200 mt-10 mx-auto bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg hover:opacity-90">
+        <button className="w-[197px] h-9 flex items-center justify-center gap-[15.691px] cursor-pointer transition-all duration-200 mt-10 mx-auto bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-lg hover:opacity-90">
           <span className="text-sm font-semibold leading-5 text-center text-white">
             View Full Leaderboard
           </span>
