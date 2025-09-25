@@ -337,11 +337,14 @@ const PerformanceAnalysis: React.FC = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-full h-80"
           >
+            {/* Horizontal grid lines */}
             <path d="M65.6699 285H1162.67" stroke="#CCCCCC" strokeDasharray="3 3" />
             <path d="M65.6699 215H1162.67" stroke="#CCCCCC" strokeDasharray="3 3" />
             <path d="M65.6699 145H1162.67" stroke="#CCCCCC" strokeDasharray="3 3" />
             <path d="M65.6699 74.9999H1162.67" stroke="#CCCCCC" strokeDasharray="3 3" />
             <path d="M65.6699 4.99994H1162.67" stroke="#CCCCCC" strokeDasharray="3 3" />
+
+            {/* Vertical grid lines */}
             <path d="M157.087 4.99994V285" stroke="#CCCCCC" strokeDasharray="3 3" />
             <path d="M339.92 4.99994V285" stroke="#CCCCCC" strokeDasharray="3 3" />
             <path d="M522.753 4.99994V285" stroke="#CCCCCC" strokeDasharray="3 3" />
@@ -350,13 +353,32 @@ const PerformanceAnalysis: React.FC = () => {
             <path d="M1071.25 4.99994V285" stroke="#CCCCCC" strokeDasharray="3 3" />
             <path d="M65.6699 4.99994V285" stroke="#CCCCCC" strokeDasharray="3 3" />
             <path d="M1162.67 4.99994V285" stroke="#CCCCCC" strokeDasharray="3 3" />
+
+            {/* Axis lines */}
             <path d="M65.6699 285H1162.67" stroke="#666666" />
+
+            {/* Y-axis labels */}
+            <text x="30" y="289" fill="#666666" fontSize="16" fontFamily="Inter">0%</text>
+            <text x="20" y="219" fill="#666666" fontSize="16" fontFamily="Inter">25%</text>
+            <text x="20" y="149" fill="#666666" fontSize="16" fontFamily="Inter">50%</text>
+            <text x="20" y="79" fill="#666666" fontSize="16" fontFamily="Inter">75%</text>
+            <text x="10" y="19" fill="#666666" fontSize="16" fontFamily="Inter">100%</text>
+
+            {/* Bars */}
             <rect x="120" y="142" width="63" height="142" fill="#8859FF" />
             <rect x="308" y="72" width="63" height="213" fill="#FF44B4" />
             <rect x="486" y="146" width="63" height="138" fill="#8CCDFF" />
             <rect x="668" y="75" width="63" height="209" fill="#82FF79" />
             <rect x="851" y="215" width="63" height="70" fill="#FFEE51" />
             <rect x="1034" y="75" width="63" height="211" fill="#FF7474" />
+
+            {/* X-axis cost labels under each pillar */}
+            <text x="120" y="310" fill="#666666" fontSize="16" fontFamily="Inter" textAnchor="middle" transform="translate(31,0)">1.25$/1M</text>
+            <text x="308" y="310" fill="#666666" fontSize="16" fontFamily="Inter" textAnchor="middle" transform="translate(31,0)">2.5$/1M</text>
+            <text x="486" y="310" fill="#666666" fontSize="16" fontFamily="Inter" textAnchor="middle" transform="translate(31,0)">3$/1M</text>
+            <text x="668" y="310" fill="#666666" fontSize="16" fontFamily="Inter" textAnchor="middle" transform="translate(31,0)">10$/1M</text>
+            <text x="851" y="310" fill="#666666" fontSize="16" fontFamily="Inter" textAnchor="middle" transform="translate(31,0)">15$/1M</text>
+            <text x="1034" y="310" fill="#666666" fontSize="16" fontFamily="Inter" textAnchor="middle" transform="translate(31,0)">40$/1M</text>
           </svg>
         </div>
       )}
@@ -367,29 +389,37 @@ const PerformanceAnalysis: React.FC = () => {
               <thead>
                 <tr className="border-b">
                   <th className="text-left p-3">Model</th>
+                  <th className="text-left p-3">Organization</th>
+                  <th className="text-left p-3">Type</th>
                   <th className="text-left p-3">Cost per 1M tokens</th>
                   <th className="text-left p-3">Performance Score</th>
-                  <th className="text-left p-3">Value Rating</th>
+                  <th className="text-left p-3">Efficiency</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b">
                   <td className="p-3">Gemini 1.5 Pro</td>
+                  <td className="p-3">Google</td>
+                  <td className="p-3">Multimodal</td>
                   <td className="p-3">$1.25</td>
                   <td className="p-3">85%</td>
-                  <td className="p-3">⭐⭐⭐⭐⭐</td>
+                  <td className="p-3">70.2</td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-3">GPT-4o</td>
+                  <td className="p-3">OpenAI</td>
+                  <td className="p-3">Multimodal</td>
                   <td className="p-3">$2.50</td>
                   <td className="p-3">92%</td>
-                  <td className="p-3">⭐⭐⭐⭐</td>
+                  <td className="p-3">36.7</td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-3">Claude 3.5 Sonnet</td>
+                  <td className="p-3">Anthropic</td>
+                  <td className="p-3">Reasoning</td>
                   <td className="p-3">$3.00</td>
                   <td className="p-3">90%</td>
-                  <td className="p-3">⭐⭐⭐</td>
+                  <td className="p-3">30.5</td>
                 </tr>
               </tbody>
             </table>
