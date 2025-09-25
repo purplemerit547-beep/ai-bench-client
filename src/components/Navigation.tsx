@@ -159,24 +159,28 @@ const Navigation = () => {
       <div className="ml-auto flex items-center z-10" style={isMobile ? { marginLeft: 0 } : {}}>
         <button
           onClick={toggleDarkMode}
-          className={`relative flex items-center focus:outline-none w-20 h-10 rounded-full p-1 transition-colors duration-300 ${
-            isDarkMode ? "bg-[#232136]" : "bg-[#F1EBFF] dark:bg-black"
-          }`}
+          className={`relative flex items-center focus:outline-none w-20 h-10 rounded-full p-1 transition-colors duration-300
+            max-md:w-14 max-md:h-8 max-md:p-0.5
+            ${
+              isDarkMode ? "bg-[#232136]" : "bg-[#F1EBFF] dark:bg-black"
+            }`}
           aria-label={
             isDarkMode ? "Switch to light mode" : "Switch to dark mode"
           }
         >
           {/* Sliding indicator */}
           <div
-            className={`absolute top-1 w-8 h-8 rounded-full shadow-md flex items-center justify-center transition-all duration-300 ${
-              isDarkMode
-                ? "bg-gray-800 left-1 transform translate-x-8"
-                : "bg-white dark:bg-black left-1 transform translate-x-0"
-            }`}
+            className={`absolute top-1 w-8 h-8 rounded-full shadow-md flex items-center justify-center transition-all duration-300
+              max-md:w-6 max-md:h-6 max-md:top-1.5
+              ${
+                isDarkMode
+                  ? "bg-gray-800 left-1 transform translate-x-8 max-md:translate-x-6"
+                  : "bg-white dark:bg-black left-1 transform translate-x-0"
+              }`}
           >
             {isDarkMode ? (
               <svg
-                className="w-4 h-4"
+                className="w-4 h-4 max-md:w-3 max-md:h-3"
                 fill="none"
                 stroke="yellow"
                 viewBox="0 0 24 24"
@@ -190,7 +194,7 @@ const Navigation = () => {
               </svg>
             ) : (
               <svg
-                className="w-4 h-4"
+                className="w-4 h-4 max-md:w-3 max-md:h-3"
                 fill="none"
                 stroke="orange"
                 viewBox="0 0 24 24"

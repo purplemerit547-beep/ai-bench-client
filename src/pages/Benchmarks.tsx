@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import React, { useState } from "react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 // --- ModelSelector ---
 interface Model {
@@ -13,21 +13,21 @@ interface ModelSelectorProps {
   className?: string;
 }
 
-const ModelSelector: React.FC<ModelSelectorProps> = ({ className = '' }) => {
+const ModelSelector: React.FC<ModelSelectorProps> = ({ className = "" }) => {
   const [models, setModels] = useState<Model[]>([
-    { id: 'gpt-4o', name: 'GPT-4o', selected: true },
-    { id: 'claude-3.5', name: 'Claude 3.5 Sonnet', selected: true },
-    { id: 'llama-3.1', name: 'Llama 3.1 405B', selected: true },
-    { id: 'gemini-1.5', name: 'Gemini 1.5 Pro', selected: true },
-    { id: 'dall-e-3', name: 'DALL-E 3', selected: false },
-    { id: 'midjourney-v6', name: 'Midjourney v6', selected: false },
-    { id: 'stable-diffusion', name: 'Stable Diffusion XL', selected: false },
-    { id: 'whisper-large', name: 'Whisper Large v3', selected: false },
+    { id: "gpt-4o", name: "GPT-4o", selected: true },
+    { id: "claude-3.5", name: "Claude 3.5 Sonnet", selected: true },
+    { id: "llama-3.1", name: "Llama 3.1 405B", selected: true },
+    { id: "gemini-1.5", name: "Gemini 1.5 Pro", selected: true },
+    { id: "dall-e-3", name: "DALL-E 3", selected: false },
+    { id: "midjourney-v6", name: "Midjourney v6", selected: false },
+    { id: "stable-diffusion", name: "Stable Diffusion XL", selected: false },
+    { id: "whisper-large", name: "Whisper Large v3", selected: false },
   ]);
 
   const toggleModel = (id: string) => {
-    setModels(prev =>
-      prev.map(model =>
+    setModels((prev) =>
+      prev.map((model) =>
         model.id === id ? { ...model, selected: !model.selected } : model
       )
     );
@@ -40,19 +40,22 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ className = '' }) => {
       </label>
       <div className="space-y-[15px]">
         {models.map((model) => (
-          <div key={model.id} className="flex items-stretch gap-2 text-sm text-neutral-950 dark:text-white font-normal leading-none">
+          <div
+            key={model.id}
+            className="flex items-stretch gap-2 text-sm text-neutral-950 dark:text-white font-normal leading-none"
+          >
             <button
               onClick={() => toggleModel(model.id)}
               className={`flex w-[13px] shrink-0 h-[13px] rounded-[3px] border transition-colors ${
                 model.selected
-                  ? 'bg-[rgba(117,71,207,1)] border-[rgba(117,71,207,1)]'
-                  : 'bg-white border-[rgba(118,118,118,1)] border-solid'
+                  ? "bg-[rgba(117,71,207,1)] border-[rgba(117,71,207,1)]"
+                  : "bg-white border-[rgba(118,118,118,1)] border-solid"
               }`}
               aria-checked={model.selected}
               role="checkbox"
               aria-label={`Toggle ${model.name}`}
             />
-            <span className={model.name.includes('Sonnet') ? 'basis-auto' : ''}>
+            <span className={model.name.includes("Sonnet") ? "basis-auto" : ""}>
               {model.name}
             </span>
           </div>
@@ -67,23 +70,26 @@ interface ChartControlsProps {
   className?: string;
 }
 
-const ChartControls: React.FC<ChartControlsProps> = ({ className = '' }) => {
-  const [selectedBenchmark, setSelectedBenchmark] = useState('Overview');
+const ChartControls: React.FC<ChartControlsProps> = ({ className = "" }) => {
+  const [selectedBenchmark, setSelectedBenchmark] = useState("Overview");
 
   return (
-    <aside className={`bg-white dark:bg-neutral-900 border flex w-full flex-col mx-auto pt-6 pb-[151px] px-6 rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:mt-6 max-md:pb-[100px] max-md:px-4 max-sm:px-2 ${className}`}>
+    <aside
+      className={`bg-white dark:bg-neutral-900 border flex w-full flex-col mx-auto pt-6 pb-[151px] px-6 rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:mt-6 max-md:pb-[100px] max-md:px-4 max-sm:px-2 ${className}`}
+    >
       <div className="flex items-stretch gap-2 text-base text-neutral-950 dark:text-white font-normal leading-none mb-9">
         <img
           src="https://api.builder.io/api/v1/image/assets/35de5dc00516421d9aa405b4c562fade/bfb143761be4f4e487dcc09076eb425c251c4097?placeholderIfAbsent=true"
           alt="Chart Controls Icon"
           className="aspect-[1] object-contain w-5 shrink-0"
         />
-        <h3 className="basis-auto my-auto">
-          Chart Controls
-        </h3>
+        <h3 className="basis-auto my-auto">Chart Controls</h3>
       </div>
       <div className="mb-[30px]">
-        <label htmlFor="benchmark-select" className="text-neutral-950 dark:text-white text-sm font-normal leading-none block mb-3">
+        <label
+          htmlFor="benchmark-select"
+          className="text-neutral-950 dark:text-white text-sm font-normal leading-none block mb-3"
+        >
           Benchmark
         </label>
         <div className="relative">
@@ -122,18 +128,40 @@ interface BenchmarkChartProps {
   className?: string;
 }
 
-const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ className = '' }) => {
+const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ className = "" }) => {
   const chartData: ChartData[] = [
-    { model: 'GPT-4o', score: 95, color: 'rgba(143,255,38,1)', height: 359 },
-    { model: 'Claude 3.5', score: 87, color: 'rgba(43,255,163,1)', height: 292 },
-    { model: 'Sonnet Llama', score: 78, color: 'rgba(255,154,12,1)', height: 256 },
-    { model: 'Llama 3.1 405B', score: 92, color: 'rgba(255,177,239,1)', height: 349 },
+    { model: "GPT-4o", score: 95, color: "rgba(143,255,38,1)", height: 359 },
+    {
+      model: "Claude 3.5",
+      score: 87,
+      color: "rgba(43,255,163,1)",
+      height: 292,
+    },
+    {
+      model: "Sonnet Llama",
+      score: 78,
+      color: "rgba(255,154,12,1)",
+      height: 256,
+    },
+    {
+      model: "Llama 3.1 405B",
+      score: 92,
+      color: "rgba(255,177,239,1)",
+      height: 349,
+    },
   ];
 
-  const selectedModels = ['GPT-4o', 'Claude 3.5 Sonnet', 'Llama 3.1 405B', 'Gemini 1.5 Pro'];
+  const selectedModels = [
+    "GPT-4o",
+    "Claude 3.5 Sonnet",
+    "Llama 3.1 405B",
+    "Gemini 1.5 Pro",
+  ];
 
   return (
-    <section className={`bg-white dark:bg-neutral-900 border flex w-full flex-col mx-auto pt-7 pb-3 px-6 rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:max-w-full max-md:mt-6 max-md:px-4 max-sm:px-2 ${className}`}>
+    <section
+      className={`bg-white dark:bg-neutral-900 border flex w-full flex-col mx-auto pt-7 pb-3 px-6 rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:max-w-full max-md:mt-6 max-md:px-4 max-sm:px-2 ${className}`}
+    >
       <header className="mb-[31px]">
         <h2 className="text-neutral-950 dark:text-white text-base font-semibold leading-none mb-[7px]">
           Benchmark Overview
@@ -154,21 +182,28 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ className = '' }) => {
       </div>
       <div className="self-stretch flex flex-wrap ml-6 max-md:ml-0">
         <div className="w-0.5 shrink-0 h-[378px] border-black border-solid border-2 max-sm:hidden" />
-        <div className="flex w-fit flex-col items-center grow shrink-0 basis-0 mt-5 max-md:max-w-full">
-          <div className="w-full max-w-full overflow-x-auto">
-            <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
+        <div className="flex w-full flex-col items-center grow shrink-0 basis-0 mt-5 max-md:max-w-full">
+          <div className="w-full overflow-x-auto">
+            <div className="flex gap-5 flex-nowrap w-max min-w-full">
               {chartData.map((data, index) => (
                 <div
                   key={data.model}
-                  className="w-3/12 max-md:w-full max-md:ml-0"
-                  style={{ marginLeft: index > 0 ? '20px' : '0' }}
+                  className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] flex flex-col items-center"
+                  style={{ marginLeft: index === 0 ? "0" : undefined }}
                 >
                   <div
-                    className="flex shrink-0 w-[111px] mx-auto max-md:mt-10"
+                    className="flex shrink-0 w-full mx-auto rounded-lg"
                     style={{
                       backgroundColor: data.color,
                       height: `${data.height}px`,
-                      marginTop: index === 0 ? '0px' : index === 1 ? '67px' : index === 2 ? '103px' : '10px'
+                      marginTop:
+                        index === 0
+                          ? "0px"
+                          : index === 1
+                          ? "67px"
+                          : index === 2
+                          ? "103px"
+                          : "10px",
                     }}
                     role="img"
                     aria-label={`${data.model}: ${data.score}% performance`}
@@ -178,15 +213,11 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ className = '' }) => {
             </div>
           </div>
           <div className="border self-stretch shrink-0 h-px border-black border-solid max-md:max-w-full" />
-          <div className="flex w-full max-w-full items-stretch gap-8 text-base text-black dark:text-white font-normal leading-none ml-3 mt-2.5 max-md:ml-0">
-            <span>GPT-4o</span>
-            <span>Claude 3.5</span>
-            <span className="grow shrink w-[91px]">
-              Sonnet Llama
-            </span>
-            <span className="grow shrink w-[103px]">
-              Llama 3.1 405B
-            </span>
+          <div className="flex gap-5 flex-nowrap w-max min-w-full text-base text-black dark:text-white font-normal leading-none ml-3 mt-2.5 max-md:ml-0 overflow-x-auto">
+            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">GPT-4o</span>
+            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">Claude 3.5</span>
+            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">Sonnet Llama</span>
+            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">Llama 3.1 405B</span>
           </div>
         </div>
       </div>
@@ -208,7 +239,8 @@ const BenchmarksPage = () => {
                   AI Model Benchmarks
                 </h1>
                 <p className="text-[rgba(113,113,130,1)] text-base font-normal max-md:max-w-full">
-                  Explore and compare AI model performance across various standardized benchmarks
+                  Explore and compare AI model performance across various
+                  standardized benchmarks
                 </p>
               </header>
               <section className="self-stretch max-md:max-w-full">

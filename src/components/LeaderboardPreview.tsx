@@ -20,7 +20,10 @@ const LeaderboardPreview = () => {
     const observer = new MutationObserver(() => {
       setIsDark(document.body.classList.contains("dark"));
     });
-    observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
     return () => observer.disconnect();
   }, []);
 
@@ -100,19 +103,19 @@ const LeaderboardPreview = () => {
 
         <div className="w-full min-w-[800px]">
           <div className="w-full h-10 flex items-center border-b border-gray-200 dark:border-gray-700 max-md:text-xs">
-            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[60px] pl-2">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[60px] text-center">
               Rank
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[160px] pl-8">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white flex-1 text-center">
               Model
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[120px] pl-4">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white flex-1 text-center">
               Organization
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[80px] pl-3">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white flex-1 text-center">
               Score
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[100px] pl-3">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[100px] text-center">
               License
             </div>
             <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white flex-1 flex justify-end">
@@ -127,7 +130,7 @@ const LeaderboardPreview = () => {
                 className="flex w-full h-[57px] items-center relative border-b border-gray-200 dark:border-gray-700 max-md:text-xs"
               >
                 <div
-                  className={`min-w-[60px] h-[21px] flex items-center justify-center ml-2 rounded-lg ${
+                  className={`min-w-[60px] h-[21px] flex items-center justify-center rounded-lg ${
                     item.rank === 1
                       ? "bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)]"
                       : "bg-[#F1EBFF] dark:bg-[#232136]"
@@ -143,8 +146,8 @@ const LeaderboardPreview = () => {
                     #{item.rank}
                   </span>
                 </div>
-
-                <div className="min-w-[160px] flex flex-col justify-center pl-8">
+                
+                <div className="flex-1 flex flex-col justify-center items-center">
                   <div className="text-sm font-normal leading-5 text-neutral-950 dark:text-white capitalize">
                     {item.model}
                   </div>
@@ -152,28 +155,28 @@ const LeaderboardPreview = () => {
                     {item.category}
                   </div>
                 </div>
-
-                <div className="min-w-[120px] text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-4">
+                
+                <div className="flex-1 text-sm font-normal leading-5 text-neutral-950 dark:text-white text-center">
                   {item.organization}
                 </div>
-
-                <div className="min-w-[80px] text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-3">
+                
+                <div className="flex-1 text-sm font-normal leading-5 text-neutral-950 dark:text-white text-center">
                   {item.score}
                 </div>
-
-                <div className="min-w-[100px] h-[21px] border flex items-center justify-center ml-3 px-2 py-1 rounded-lg border border-gray-300 dark:border-gray-700 bg-[#F1EBFF] dark:bg-[#232136]">
+                
+                <div className="min-w-[100px] h-[21px] border flex items-center justify-center px-2 py-1 rounded-lg border border-gray-300 dark:border-gray-700 bg-[#F1EBFF] dark:bg-[#232136]">
                   <span className="text-xs font-semibold leading-4 text-neutral-950 dark:text-white text-center">
                     {item.license}
                   </span>
                 </div>
-
+                
                 <div className="flex-1 flex gap-2 justify-end">
                   <button className="w-14 h-8 border flex items-center justify-center cursor-pointer transition-all duration-200 bg-white dark:bg-black rounded-lg border-solid border-[rgba(0,0,0,0.10)] hover:bg-gray-50 dark:hover:bg-black">
                     <span className="text-sm font-semibold leading-5 text-center text-neutral-950 dark:text-white">
                       View
                     </span>
                   </button>
-
+                
                   <button className="w-[82px] h-8 flex items-center justify-center cursor-pointer transition-all duration-200 bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-lg hover:opacity-90">
                     <span className="text-sm font-semibold leading-5 text-center text-white">
                       Compare
