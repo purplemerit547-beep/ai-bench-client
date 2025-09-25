@@ -22,7 +22,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-[#F6F3FF] dark:bg-black pt-[48.67px] pb-[47.99px] px-20 border-t-[0.667px] border-t-[rgba(0,0,0,0.10)] border-solid max-md:p-10 max-sm:px-5 max-sm:py-8">
+    <footer className="w-full bg-[#F6F3FF] dark:bg-[#232136] pt-[48.67px] pb-[47.99px] px-20 border-t-[0.667px] border-t-[rgba(0,0,0,0.10)] border-solid max-md:p-10 max-sm:px-5 max-sm:py-8">
       <div className="w-full max-w-screen-xl relative mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {footerSections.map((section, index) => (
