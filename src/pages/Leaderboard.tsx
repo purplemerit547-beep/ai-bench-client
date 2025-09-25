@@ -209,7 +209,7 @@ export default function Leaderboard() {
   const handleClearAll = () => setCompareBucket([]);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#F1EBFF" }}>
+    <div className="min-h-screen bg-[#F1EBFF] dark:bg-black">
       <Navigation />
 
       <main className="px-20 py-8">

@@ -56,9 +56,9 @@ const ModelCard: React.FC<ModelCardProps> = ({
         {icon}
       </div>
       
-      <div className="w-[368px] h-[337px] border relative bg-white p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:w-full max-sm:max-w-[350px]">
+      <div className="w-[368px] h-[337px] border relative bg-white dark:bg-black p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:w-full max-sm:max-w-[350px]">
         <div className="flex items-start justify-between mb-2">
-          <h4 className="text-lg font-semibold leading-7 text-neutral-950">
+          <h4 className="text-lg font-semibold leading-7 text-neutral-950 dark:text-white">
             {title}
           </h4>
           
@@ -69,7 +69,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
           )}
         </div>
         
-        <p className="text-base font-normal leading-6 text-[#717182] mb-5">
+        <p className="text-base font-normal leading-6 text-[#717182] dark:text-white mb-5">
           {organization}
         </p>
         
@@ -81,20 +81,20 @@ const ModelCard: React.FC<ModelCardProps> = ({
         </div>
         
         <div className="h-10 mb-5">
-          <p className="text-sm font-normal leading-5 text-[#717182]">
+          <p className="text-sm font-normal leading-5 text-[#717182] dark:text-white">
             {description}
           </p>
         </div>
         
         <div className="mb-2">
-          <span className="text-sm font-normal leading-5 text-[#717182]">Overall Score</span>
-          <span className="text-sm font-semibold leading-5 text-neutral-950 absolute right-[25px]">
+          <span className="text-sm font-normal leading-5 text-[#717182] dark:text-white">Overall Score</span>
+          <span className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white absolute right-[25px]">
             {score}
           </span>
         </div>
         
-        <div className="w-[319px] h-2 relative bg-[#F6F3FF] mb-4 rounded-full">
-          <div 
+        <div className="w-[319px] h-2 relative bg-[#F6F3FF] dark:bg-black mb-4 rounded-full">
+          <div
             className="h-2 bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-full border border-[#8A4DDF]"
             style={{ width: `${progressWidth}%` }}
           />
@@ -102,8 +102,8 @@ const ModelCard: React.FC<ModelCardProps> = ({
         
         <div className="flex gap-1 flex-wrap mb-6">
           {capabilities.map((capability, index) => (
-            <div key={index} className="h-[21px] border flex items-center px-[8.66px] py-[2.66px] rounded-lg border-solid border-[#F6F3FF]">
-              <span className="text-xs font-semibold leading-4 text-neutral-950 text-center">
+            <div key={index} className="h-[21px] border flex items-center px-[8.66px] py-[2.66px] rounded-lg border-solid border-[#F6F3FF] dark:border-black">
+              <span className="text-xs font-semibold leading-4 text-neutral-950 dark:text-white text-center">
                 {capability}
               </span>
             </div>
@@ -111,13 +111,13 @@ const ModelCard: React.FC<ModelCardProps> = ({
         </div>
         
         <div className="flex gap-2 absolute left-[25px] bottom-[25px]">
-          <button className="w-[154px] h-8 border flex items-center justify-center gap-2.5 cursor-pointer transition-all duration-200 bg-white rounded-lg border-solid border-[#6931C9] hover:bg-gray-50">
+          <button className="w-[154px] h-8 border flex items-center justify-center gap-2.5 cursor-pointer transition-all duration-200 bg-white dark:bg-black rounded-lg border-solid border-[#6931C9] hover:bg-gray-50 dark:hover:bg-black">
             <svg width="16" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10.0598 2H14.0598V6" stroke="#212121" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M6.72656 9.33333L14.0599 2" stroke="#212121" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M12.0598 8.66667V12.6667C12.0598 13.0203 11.9193 13.3594 11.6693 13.6095C11.4192 13.8595 11.0801 14 10.7265 14H3.39315C3.03953 14 2.70039 13.8595 2.45034 13.6095C2.20029 13.3594 2.05981 13.0203 2.05981 12.6667V5.33333C2.05981 4.97971 2.20029 4.64057 2.45034 4.39052C2.70039 4.14048 3.03953 4 3.39315 4H7.39315" stroke="#212121" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <span className="text-sm font-semibold leading-5 text-center text-[#212121]">
+            <span className="text-sm font-semibold leading-5 text-center text-[#212121] dark:text-white">
               Details
             </span>
           </button>

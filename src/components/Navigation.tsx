@@ -2,16 +2,25 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Initialize from body class
+    return document.body.classList.contains("dark");
+  });
 
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    // You can add logic here to apply dark/light theme to your app
-    // For example: document.documentElement.classList.toggle('dark');
+    setIsDarkMode((prev) => {
+      const next = !prev;
+      if (next) {
+        document.body.classList.add("dark");
+      } else {
+        document.body.classList.remove("dark");
+      }
+      return next;
+    });
   };
 
   return (
-    <nav className="box-border flex items-center w-full h-16 px-20 py-4 max-md:px-10 max-sm:px-5 relative">
+    <nav className="box-border flex items-center w-full h-16 px-20 py-4 max-md:px-10 max-sm:px-5 relative bg-white dark:bg-black text-neutral-950 dark:text-white border-b border-gray-200 dark:border-gray-700">
       <div className="flex items-center z-10">
         <div className="box-border w-8 h-8 flex items-center justify-center rounded-[10px] bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] mr-2">
           <svg
@@ -23,14 +32,14 @@ const Navigation = () => {
           >
             <path
               d="M3.33325 11.6667C3.17555 11.6672 3.02094 11.623 2.88737 11.5391C2.75381 11.4553 2.64677 11.3353 2.5787 11.193C2.51063 11.0508 2.48432 10.8921 2.50283 10.7355C2.52133 10.5789 2.5839 10.4308 2.68325 10.3083L10.9332 1.80833C10.9951 1.73689 11.0795 1.68862 11.1724 1.67144C11.2653 1.65425 11.3613 1.66917 11.4447 1.71375C11.528 1.75832 11.5937 1.82991 11.631 1.91675C11.6683 2.00359 11.675 2.10053 11.6499 2.19166L10.0499 7.20833C10.0027 7.3346 9.98689 7.47043 10.0037 7.60417C10.0206 7.7379 10.0696 7.86556 10.1467 7.97618C10.2237 8.0868 10.3264 8.17709 10.446 8.23929C10.5656 8.3015 10.6984 8.33377 10.8332 8.33333H16.6666C16.8243 8.33279 16.9789 8.37701 17.1124 8.46084C17.246 8.54468 17.3531 8.6647 17.4211 8.80695C17.4892 8.94919 17.5155 9.10784 17.497 9.26444C17.4785 9.42105 17.4159 9.56919 17.3166 9.69166L9.06658 18.1917C9.00469 18.2631 8.92036 18.3114 8.82743 18.3285C8.73449 18.3457 8.63848 18.3308 8.55514 18.2862C8.4718 18.2417 8.40609 18.1701 8.3688 18.0832C8.33151 17.9964 8.32485 17.8995 8.34991 17.8083L9.94991 12.7917C9.99709 12.6654 10.0129 12.5296 9.99609 12.3958C9.97924 12.2621 9.9302 12.1344 9.85317 12.0238C9.77614 11.9132 9.67343 11.8229 9.55385 11.7607C9.43426 11.6985 9.30137 11.6662 9.16658 11.6667H3.33325Z"
-              stroke="white"
+              stroke={isDarkMode ? "#000" : "white"}
               strokeWidth="1.66667"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>
         </div>
-        <div className="text-lg font-normal leading-7 text-neutral-950 ml-2">
+        <div className="text-lg font-normal leading-7 ml-2 text-neutral-950 dark:text-white">
           AIBench
         </div>
       </div>
@@ -40,8 +49,15 @@ const Navigation = () => {
             to="/"
             end
             className={({ isActive }) =>
-              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200 hover:text-neutral-950 ${
-                isActive ? "text-neutral-950 font-semibold" : "text-[#717182]"
+              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
+              ${
+                isDarkMode
+                  ? isActive
+                    ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
+                    : "text-gray-400 hover:text-white"
+                  : isActive
+                    ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+                    : "text-[#717182] hover:text-neutral-950"
               }`
             }
           >
@@ -50,8 +66,15 @@ const Navigation = () => {
           <NavLink
             to="/leaderboard"
             className={({ isActive }) =>
-              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200 hover:text-neutral-950 ${
-                isActive ? "text-neutral-950 font-semibold" : "text-[#717182]"
+              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
+              ${
+                isDarkMode
+                  ? isActive
+                    ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
+                    : "text-gray-400 hover:text-white"
+                  : isActive
+                    ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+                    : "text-[#717182] hover:text-neutral-950"
               }`
             }
           >
@@ -60,8 +83,15 @@ const Navigation = () => {
           <NavLink
             to="/benchmarks"
             className={({ isActive }) =>
-              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200 hover:text-neutral-950 ${
-                isActive ? "text-neutral-950 font-semibold" : "text-[#717182]"
+              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
+              ${
+                isDarkMode
+                  ? isActive
+                    ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
+                    : "text-gray-400 hover:text-white"
+                  : isActive
+                    ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+                    : "text-[#717182] hover:text-neutral-950"
               }`
             }
           >
@@ -70,8 +100,15 @@ const Navigation = () => {
           <NavLink
             to="/pricing"
             className={({ isActive }) =>
-              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200 hover:text-neutral-950 ${
-                isActive ? "text-neutral-950 font-semibold" : "text-[#717182]"
+              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
+              ${
+                isDarkMode
+                  ? isActive
+                    ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
+                    : "text-gray-400 hover:text-white"
+                  : isActive
+                    ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+                    : "text-[#717182] hover:text-neutral-950"
               }`
             }
           >
@@ -83,7 +120,7 @@ const Navigation = () => {
         <button
           onClick={toggleDarkMode}
           className={`relative flex items-center focus:outline-none w-20 h-10 rounded-full p-1 transition-colors duration-300 ${
-            isDarkMode ? "bg-[#232136]" : "bg-[#F1EBFF]"
+            isDarkMode ? "bg-[#232136]" : "bg-[#F1EBFF] dark:bg-black"
           }`}
           aria-label={
             isDarkMode ? "Switch to light mode" : "Switch to dark mode"
@@ -94,7 +131,7 @@ const Navigation = () => {
             className={`absolute top-1 w-8 h-8 rounded-full shadow-md flex items-center justify-center transition-all duration-300 ${
               isDarkMode
                 ? "bg-gray-800 left-1 transform translate-x-8"
-                : "bg-white left-1 transform translate-x-0"
+                : "bg-white dark:bg-black left-1 transform translate-x-0"
             }`}
           >
             {isDarkMode ? (

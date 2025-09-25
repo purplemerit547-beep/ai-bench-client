@@ -52,21 +52,21 @@ const LeaderboardPreview = () => {
   };
 
   return (
-    <section className="w-full flex flex-col items-center px-20 py-16 max-md:px-10 max-md:py-12 max-sm:px-5 max-sm:py-8">
-      <h2 className="text-3xl font-semibold leading-9 text-neutral-950 text-center mb-4 max-sm:text-2xl max-sm:leading-[30px]">
+    <section className="w-full flex flex-col items-center px-20 py-16 max-md:px-10 max-md:py-12 max-sm:px-5 max-sm:py-8 dark:bg-black">
+      <h2 className="text-3xl font-semibold leading-9 text-neutral-950 dark:text-white text-center mb-4 max-sm:text-2xl max-sm:leading-[30px]">
         Leaderboard Preview
       </h2>
       
-      <p className="text-base font-normal leading-6 text-[#717182] text-center mb-[60px]">
+      <p className="text-base font-normal leading-6 text-[#717182] dark:text-white text-center mb-[60px]">
         Top performing models across different modalities
       </p>
       
-      <div className="w-full max-w-6xl border relative bg-white p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:overflow-x-auto max-sm:p-4">
-        <h4 className="text-base font-semibold leading-4 text-neutral-950 mb-2">
+      <div className="w-full max-w-6xl border relative bg-white dark:bg-black p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:overflow-x-auto max-sm:p-4">
+        <h4 className="text-base font-semibold leading-4 text-neutral-950 dark:text-white mb-2">
           Top Models
         </h4>
         
-        <p className="text-base font-normal leading-6 text-[#717182] mb-8">
+        <p className="text-base font-normal leading-6 text-[#717182] dark:text-white mb-8">
           Ranked by overall performance scores
         </p>
         
@@ -76,22 +76,22 @@ const LeaderboardPreview = () => {
         
         <div className="w-full max-sm:min-w-[800px]">
           <div className="w-full h-10 flex items-center border-b-[0.667px] border-b-[rgba(0,0,0,0.10)] border-solid max-md:text-xs">
-            <div className="text-sm font-semibold leading-5 text-neutral-950 w-10 pl-2">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-10 pl-2">
               Rank
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 w-[200px] pl-[89px] max-md:w-[150px] max-md:pl-[60px]">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[200px] pl-[89px] max-md:w-[150px] max-md:pl-[60px]">
               Model
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 w-[150px] pl-7 max-md:w-[120px] max-md:pl-5">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[150px] pl-7 max-md:w-[120px] max-md:pl-5">
               Organization
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 w-20 pl-5">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-20 pl-5">
               Score
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 w-[120px] pl-5">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[120px] pl-5">
               License
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 flex-1 flex justify-end">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white flex-1 flex justify-end">
               Actions
             </div>
           </div>
@@ -103,38 +103,38 @@ const LeaderboardPreview = () => {
                   item.rank === 1 ? 'bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)]' : 'bg-[#F1EBFF]'
                 }`}>
                   <span className={`text-xs font-semibold leading-4 text-center ${
-                    item.rank === 1 ? 'text-white' : 'text-[#030213]'
+                    item.rank === 1 ? 'text-white' : 'text-[#030213] dark:text-white'
                   }`}>
                     #{item.rank}
                   </span>
                 </div>
                 
                 <div className="w-[200px] flex flex-col justify-center pl-[58px]">
-                  <div className="text-sm font-normal leading-5 text-neutral-950 capitalize">
+                  <div className="text-sm font-normal leading-5 text-neutral-950 dark:text-white capitalize">
                     {item.model}
                   </div>
-                  <div className="text-sm font-normal leading-5 text-[#717182] capitalize">
+                  <div className="text-sm font-normal leading-5 text-[#717182] dark:text-white capitalize">
                     {item.category}
                   </div>
                 </div>
                 
-                <div className="w-[150px] text-sm font-normal leading-5 text-neutral-950 pl-7">
+                <div className="w-[150px] text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-7">
                   {item.organization}
                 </div>
                 
-                <div className="w-20 text-sm font-normal leading-5 text-neutral-950 pl-5">
+                <div className="w-20 text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-5">
                   {item.score}
                 </div>
                 
                 <div className="w-auto min-w-9 h-[21px] border flex items-center justify-center ml-5 px-[8.66px] py-[2.67px] rounded-lg border-solid border-[rgba(0,0,0,0.10)]">
-                  <span className="text-xs font-semibold leading-4 text-neutral-950 text-center">
+                  <span className="text-xs font-semibold leading-4 text-neutral-950 dark:text-white text-center">
                     {item.license}
                   </span>
                 </div>
                 
                 <div className="flex-1 flex gap-2 justify-end">
-                  <button className="w-14 h-8 border flex items-center justify-center cursor-pointer transition-all duration-200 bg-white rounded-lg border-solid border-[rgba(0,0,0,0.10)] hover:bg-gray-50">
-                    <span className="text-sm font-semibold leading-5 text-center text-neutral-950">
+                  <button className="w-14 h-8 border flex items-center justify-center cursor-pointer transition-all duration-200 bg-white dark:bg-black rounded-lg border-solid border-[rgba(0,0,0,0.10)] hover:bg-gray-50 dark:hover:bg-black">
+                    <span className="text-sm font-semibold leading-5 text-center text-neutral-950 dark:text-white">
                       View
                     </span>
                   </button>

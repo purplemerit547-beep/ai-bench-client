@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 interface SearchInputProps {
   placeholder?: string;
   onSearch?: (value: string) => void;
+  isDark?: boolean;
 }
 
-const SearchInput: React.FC<SearchInputProps> = ({ 
-  placeholder = "Search by model name...", 
-  onSearch 
+const SearchInput: React.FC<SearchInputProps> = ({
+  placeholder = "Search by model name...",
+  onSearch,
+  isDark = false
 }) => {
   const [searchValue, setSearchValue] = useState('');
 
@@ -18,7 +20,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   };
 
   return (
-    <div className="w-full h-full relative flex items-center bg-white px-4 py-0 rounded-lg">
+    <div className={`w-full h-full relative flex items-center px-4 py-0 rounded-lg transition-colors duration-300 ${isDark ? "bg-[#232136]" : "bg-white"}`}>
       <svg width="16" height="16" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-3">
         <path d="M14.5401 14.33L11.6467 11.4367" stroke="#717182" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M7.87337 12.9967C10.8189 12.9967 13.2067 10.6089 13.2067 7.66335C13.2067 4.71783 10.8189 2.33002 7.87337 2.33002C4.92785 2.33002 2.54004 4.71783 2.54004 7.66335C2.54004 10.6089 4.92785 12.9967 7.87337 12.9967Z" stroke="#717182" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>

@@ -433,11 +433,11 @@ const DetailedComparison: React.FC = () => {
 // Main page component
 const ModelComparisonPage = () => {
   return (
-    <div className="box-border min-h-screen">
-      <div className="box-border flex w-full min-h-screen flex-col justify-center items-start bg-white">
-        <div className="box-border flex w-full flex-col justify-start items-start bg-white">
+    <div className="box-border min-h-screen bg-white dark:bg-black">
+      <div className="box-border flex w-full min-h-screen flex-col justify-center items-start bg-white dark:bg-black">
+        <div className="box-border flex w-full flex-col justify-start items-start bg-white dark:bg-black">
           <Navigation />
-          <main className="box-border flex w-full flex-col justify-center items-center min-h-[calc(100vh_-_65px_-_309px)] bg-[#F6F3FF] px-20 py-8 max-md:px-10 max-md:py-8 max-sm:p-5">
+          <main className="box-border flex w-full flex-col justify-center items-center min-h-[calc(100vh_-_65px_-_309px)] bg-[#F6F3FF] dark:bg-black px-20 py-8 max-md:px-10 max-md:py-8 max-sm:p-5">
             <div className="box-border w-full max-w-screen-xl relative">
               {/* Back Button */}
               <button className="box-border flex w-[187px] justify-start items-center gap-4 cursor-pointer mb-4 pl-3 pr-[11.699px] pt-[8.66px] pb-[8.67px] rounded-lg hover:bg-white/50 transition-colors">

@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 interface CategoryFilterProps {
   categories: string[];
   onCategoryChange?: (category: string) => void;
+  isDark?: boolean;
 }
 
-const CategoryFilter: React.FC<CategoryFilterProps> = ({ categories, onCategoryChange }) => {
+const CategoryFilter: React.FC<CategoryFilterProps> = ({ categories, onCategoryChange, isDark = false }) => {
   const [activeCategory, setActiveCategory] = useState(categories[0] || 'All');
 
   const handleCategoryClick = (category: string) => {
@@ -22,11 +23,17 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({ categories, onCategoryC
           className={`h-[33px] flex items-center justify-center cursor-pointer transition-all duration-200 px-[16.66px] py-[8.66px] rounded-lg ${
             activeCategory === category
               ? 'bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)]'
-              : 'bg-white hover:bg-gray-50'
+              : isDark
+                ? 'bg-[#232136] hover:bg-[#35324d]'
+                : 'bg-white hover:bg-gray-50'
           }`}
         >
           <span className={`text-xs font-semibold leading-4 text-center ${
-            activeCategory === category ? 'text-white' : 'text-[#030213]'
+            activeCategory === category
+              ? 'text-white'
+              : isDark
+                ? 'text-white'
+                : 'text-[#030213]'
           }`}>
             {category}
           </span>
