@@ -209,29 +209,29 @@ export default function Leaderboard() {
   const handleClearAll = () => setCompareBucket([]);
 
   return (
-    <div className="min-h-screen bg-[#F1EBFF] dark:bg-black">
+    <div className="min-h-screen bg-[#F1EBFF] dark:bg-black dark:text-white">
       <Navigation />
 
       <main className="px-20 py-8">
         <div className="max-w-7xl mx-auto">
           {/* Title Section */}
           <div className="mb-8">
-            <h1 className="text-3xl font-semibold text-gray-900 mb-3">
+            <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-3">
               AI Model Leaderboard
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               Comprehensive rankings of AI models across different modalities
               and benchmarks
             </p>
           </div>
 
           {/* Filters Card */}
-          <div className="w-full max-w-6xl mx-auto border relative bg-white p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] mb-8">
+          <div className="w-full max-w-6xl mx-auto border relative bg-white dark:bg-neutral-900 p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-neutral-800 mb-8">
             <div className="mb-6">
-              <h3 className="text-base font-semibold text-neutral-950 mb-1">
+              <h3 className="text-base font-semibold text-neutral-950 dark:text-white mb-1">
                 Filters
               </h3>
-              <p className="text-base font-normal leading-6 text-[#717182]">
+              <p className="text-base font-normal leading-6 text-[#717182] dark:text-gray-400">
                 Refine the leaderboard based on your preferences
               </p>
             </div>
@@ -241,7 +241,7 @@ export default function Leaderboard() {
               <Search className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
               <Input
                 placeholder="Search models or organizations..."
-                className="pl-10 h-12 bg-[#F6F4FA] border-0 rounded-lg"
+                className="pl-10 h-12 bg-[#F6F4FA] dark:bg-[#23232b] border-0 rounded-lg"
               />
             </div>
 
@@ -250,10 +250,10 @@ export default function Leaderboard() {
               {categories.map((category, index) => (
                 <button
                   key={category}
-                  className={`px-4 h-8 text-xs font-semibold rounded-lg border border-[rgba(0,0,0,0.10)] transition-all duration-200 ${
+                  className={`px-4 h-8 text-xs font-semibold rounded-lg border border-[rgba(0,0,0,0.10)] dark:border-neutral-800 transition-all duration-200 ${
                     index === 0
                       ? "bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] text-white"
-                      : "bg-[#F1EBFF] text-[#030213]"
+                      : "bg-[#F1EBFF] dark:bg-[#23232b] text-[#030213] dark:text-white"
                   }`}
                 >
                   {category}
@@ -264,11 +264,11 @@ export default function Leaderboard() {
             {/* Dropdowns */}
             <div className="flex gap-4">
               <div className="flex-1">
-                <label className="block text-sm text-neutral-950 mb-2">
+                <label className="block text-sm text-neutral-950 dark:text-white mb-2">
                   License
                 </label>
                 <Select>
-                  <SelectTrigger className="bg-[#F6F4FA] border-0 rounded-lg h-9">
+                  <SelectTrigger className="bg-[#F6F4FA] dark:bg-[#23232b] border-0 rounded-lg h-9">
                     <SelectValue placeholder="All Licenses" />
                   </SelectTrigger>
                   <SelectContent>
@@ -281,11 +281,11 @@ export default function Leaderboard() {
               </div>
 
               <div className="flex-1">
-                <label className="block text-sm text-neutral-950 mb-2">
+                <label className="block text-sm text-neutral-950 dark:text-white mb-2">
                   Release Year
                 </label>
                 <Select>
-                  <SelectTrigger className="bg-[#F6F4FA] border-0 rounded-lg h-9">
+                  <SelectTrigger className="bg-[#F6F4FA] dark:bg-[#23232b] border-0 rounded-lg h-9">
                     <SelectValue placeholder="All Years" />
                   </SelectTrigger>
                   <SelectContent>
@@ -299,12 +299,12 @@ export default function Leaderboard() {
           </div>
 
           {/* Results Card */}
-          <div className="w-full max-w-6xl mx-auto border relative bg-white p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] overflow-hidden">
+          <div className="w-full max-w-6xl mx-auto border relative bg-white dark:bg-neutral-900 p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-neutral-800 overflow-hidden">
             <div className="pb-0">
-              <h3 className="text-base font-semibold text-neutral-950 mb-1">
+              <h3 className="text-base font-semibold text-neutral-950 dark:text-white mb-1">
                 Results (9 models)
               </h3>
-              <p className="text-base font-normal leading-6 text-[#717182] mb-6">
+              <p className="text-base font-normal leading-6 text-[#717182] dark:text-gray-400 mb-6">
                 Click column headers to sort
               </p>
             </div>
@@ -313,28 +313,28 @@ export default function Leaderboard() {
               <table className="w-full">
                 <thead className="border-b-[0.667px] border-b-[rgba(0,0,0,0.10)] border-solid">
                   <tr>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 w-10 pl-2 text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-10 pl-2 text-left">
                       Rank
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 w-[200px] pl-[89px] text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[200px] pl-[89px] text-left">
                       Model
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 w-[150px] pl-7 text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[150px] pl-7 text-left">
                       Organization
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 w-20 pl-5 text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-20 pl-5 text-left">
                       Score
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 w-[120px] pl-5 text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[120px] pl-5 text-left">
                       Cost
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 w-[120px] pl-5 text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[120px] pl-5 text-left">
                       License
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 text-left pl-16">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white text-left pl-16">
                       Released
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 flex-1 flex justify-end text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white flex-1 flex justify-end text-left">
                       Actions
                     </th>
                   </tr>
@@ -351,15 +351,15 @@ export default function Leaderboard() {
                           index === firstSelectedIndex && (
                             <tr>
                               <td colSpan={8}>
-                                <div className="flex items-center justify-between my-2 bg-[#F1EBFF] border border-[rgba(0,0,0,0.10)] rounded-[10px] px-6 py-3">
+                                <div className="flex items-center justify-between my-2 bg-[#F1EBFF] dark:bg-[#23232b] border border-[rgba(0,0,0,0.10)] dark:border-neutral-800 rounded-[10px] px-6 py-3">
                                   <div className="flex gap-2 flex-wrap items-center">
-                                    <span className="text-sm font-semibold text-neutral-950 mr-2">
+                                    <span className="text-sm font-semibold text-neutral-950 dark:text-white mr-2">
                                       Compare Models ({compareBucket.length}/3)
                                     </span>
                                     {compareBucket.map((selectedModel) => (
                                       <div
                                         key={selectedModel.rank}
-                                        className="flex items-center bg-white rounded-lg px-3 py-1 mr-1 border border-[#B18BEF]"
+                                        className="flex items-center bg-white dark:bg-neutral-800 rounded-lg px-3 py-1 mr-1 border border-[#B18BEF] dark:border-[#7c3aed]"
                                       >
                                         <span className="text-xs font-medium text-[#4B00A8] mr-2">
                                           {selectedModel.model}
@@ -380,7 +380,7 @@ export default function Leaderboard() {
                                   </div>
                                   <div className="flex gap-2 items-center">
                                     <button
-                                      className="text-xs font-semibold text-[#4B00A8] px-3 py-1 rounded hover:bg-white border border-transparent hover:border-[#B18BEF] transition"
+                                      className="text-xs font-semibold text-[#4B00A8] px-3 py-1 rounded hover:bg-white dark:hover:bg-neutral-900 border border-transparent hover:border-[#B18BEF] dark:hover:border-[#7c3aed] transition"
                                       onClick={handleClearAll}
                                     >
                                       Clear All
@@ -412,20 +412,20 @@ export default function Leaderboard() {
                               </td>
                             </tr>
                           )}
-                        <tr className="border-b-[0.667px] border-b-[rgba(0,0,0,0.10)] border-solid">
+                        <tr className="border-b-[0.667px] border-b-[rgba(0,0,0,0.10)] dark:border-b-neutral-800 border-solid">
                           <td className="w-[29px] h-[21px] pl-2 py-3">
                             <div
                               className={`flex items-center justify-center rounded-lg ${
                                 model.rank === 1
                                   ? "bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)]"
-                                  : "bg-[#F1EBFF]"
+                                  : "bg-[#F1EBFF] dark:bg-[#23232b]"
                               }`}
                             >
                               <span
                                 className={`text-xs font-semibold leading-4 text-center ${
                                   model.rank === 1
                                     ? "text-white"
-                                    : "text-[#030213]"
+                                    : "text-[#030213] dark:text-white"
                                 }`}
                               >
                                 #{model.rank}
@@ -433,40 +433,40 @@ export default function Leaderboard() {
                             </div>
                           </td>
                           <td className="w-[200px] pl-[58px] py-3">
-                            <div className="text-sm font-normal leading-5 text-neutral-950 capitalize">
+                            <div className="text-sm font-normal leading-5 text-neutral-950 dark:text-white capitalize">
                               {model.model}
                             </div>
-                            <div className="text-sm font-normal leading-5 text-[#717182] capitalize">
+                            <div className="text-sm font-normal leading-5 text-[#717182] dark:text-gray-400 capitalize">
                               {model.type}
                             </div>
                           </td>
-                          <td className="w-[150px] text-sm font-normal leading-5 text-neutral-950 pl-7 py-3">
+                          <td className="w-[150px] text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-7 py-3">
                             {model.organization}
                           </td>
-                          <td className="w-20 text-sm font-normal leading-5 text-neutral-950 pl-5 py-3">
+                          <td className="w-20 text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-5 py-3">
                             {model.score}
                           </td>
                           <td className="w-[120px] pl-5 py-3">
-                            <div className="text-sm font-medium text-gray-900">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {model.cost}
                             </div>
                             {model.cost !== "Free" && (
-                              <div className="text-xs text-gray-500">
+                              <div className="text-xs text-gray-500 dark:text-gray-400">
                                 tokens
                               </div>
                             )}
                           </td>
-                          <td className="w-auto min-w-9 h-[21px] border flex items-center justify-center ml-5 px-[8.66px] py-[2.67px] rounded-lg border-solid border-[rgba(0,0,0,0.10)] py-3">
-                            <span className="text-xs font-semibold leading-4 text-neutral-950 text-center">
+                          <td className="w-auto min-w-9 h-[21px] border flex items-center justify-center ml-5 px-[8.66px] py-[2.67px] rounded-lg border-solid border-[rgba(0,0,0,0.10)] dark:border-neutral-800 py-3">
+                            <span className="text-xs font-semibold leading-4 text-neutral-950 dark:text-white text-center">
                               {model.license}
                             </span>
                           </td>
-                          <td className="text-sm font-normal leading-5 text-neutral-950 py-3 pl-16">
+                          <td className="text-sm font-normal leading-5 text-neutral-950 dark:text-white py-3 pl-16">
                             {model.released}
                           </td>
                           <td className="flex gap-2 justify-end py-3">
-                            <button className="w-14 h-8 border flex items-center justify-center cursor-pointer transition-all duration-200 bg-white rounded-lg border-solid border-[rgba(0,0,0,0.10)] hover:bg-gray-50">
-                              <span className="text-sm font-semibold leading-5 text-center text-neutral-950">
+                            <button className="w-14 h-8 border flex items-center justify-center cursor-pointer transition-all duration-200 bg-white dark:bg-neutral-800 rounded-lg border-solid border-[rgba(0,0,0,0.10)] dark:border-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-700">
+                              <span className="text-sm font-semibold leading-5 text-center text-neutral-950 dark:text-white">
                                 View
                               </span>
                             </button>
