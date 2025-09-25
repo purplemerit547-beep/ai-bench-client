@@ -31,7 +31,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
   isFree = false,
 }) => {
   return (
-    <article className="box-border w-[389px] h-[329px] border bg-white p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-sm:h-auto max-sm:p-5">
+    <article className="box-border w-full max-w-[389px] border bg-white p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] flex flex-col justify-between max-md:w-full max-sm:p-4">
       <header className="flex items-start justify-between mb-6">
         <div>
           <h3 className="text-neutral-950 text-xl font-semibold leading-7 mb-1 flex items-center gap-2">
@@ -109,7 +109,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
         </div>
       </div>
 
-      <button className="flex w-full justify-center items-center gap-2.5 cursor-pointer border bg-white px-[118px] py-[6.67px] rounded-lg border-solid border-[#6931C9] hover:bg-purple-50 transition-colors max-sm:p-3">
+      <button className="flex w-full justify-center items-center gap-2.5 cursor-pointer border bg-white py-2 px-4 rounded-lg border-solid border-[#6931C9] hover:bg-purple-50 transition-colors">
         <div
           dangerouslySetInnerHTML={{
             __html:
@@ -125,17 +125,19 @@ const ModelCard: React.FC<ModelCardProps> = ({
 // OverallScores component
 const OverallScores: React.FC = () => {
   return (
-    <section className="box-border w-[592px] h-[439px] border bg-white p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-sm:h-auto max-sm:p-5">
+    <section className="box-border w-full max-w-[592px] border bg-white p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
       <header className="mb-6">
         <h3 className="text-neutral-950 text-xl font-semibold leading-7 mb-2">Overall Scores</h3>
         <p className="text-[#717182] text-sm font-normal leading-5">Composite performance rankings</p>
       </header>
 
-      <div className="mb-6">
+      <div className="mb-6 w-full overflow-x-auto">
         <div
+          className="min-w-[350px] w-full"
+          style={{ maxWidth: "100%", overflowX: "auto" }}
           dangerouslySetInnerHTML={{
             __html:
-              "<svg width=\"544\" height=\"321\" viewBox=\"0 0 544 321\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"bar-chart\" style=\"box-sizing: border-box; width: 543px; height: 320px; margin-bottom: 24px\"> <path d=\"M65.6699 285.67H538.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 215.67H538.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 145.67H538.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 75.67H538.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 5.66998H538.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M144.503 5.66998V285.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M302.17 5.66998V285.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M459.836 5.66998V285.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 5.66998V285.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M538.67 5.66998V285.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 285.67H538.67\" stroke=\"#666666\"></path> <path d=\"M144.503 291.67V285.67\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"115.355\" y=\"301.508\">GPT-4o</tspan></text> <path d=\"M302.17 291.67V285.67\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"232.506\" y=\"301.508\">Claude 3.5 Sonnet</tspan></text> <path d=\"M459.837 291.67V285.67\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"402.626\" y=\"301.508\">Llama 3.1 405B</tspan></text> <path d=\"M65.6699 5.66998V285.67\" stroke=\"#666666\"></path> <path d=\"M59.6699 285.67H65.6699\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"47.6699\" y=\"289.248\">0</tspan></text> <path d=\"M59.6699 215.67H65.6699\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"38.248\" y=\"219.248\">25</tspan></text> <path d=\"M59.6699 145.67H65.6699\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"37.9355\" y=\"149.248\">50</tspan></text> <path d=\"M59.6699 75.67H65.6699\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"38.9512\" y=\"79.2482\">75</tspan></text> <path d=\"M59.6699 5.66998H65.6699\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"30.2324\" y=\"16.2482\">100</tspan></text> <path d=\"M81.4365 28.91H207.437V285.67H81.4365V28.91Z\" fill=\"#FFBE0C\"></path> <path d=\"M239.103 76H365.103V285.67H239.103V76Z\" fill=\"#49FF71\"></path> <path d=\"M396.77 146H522.77V285.67H396.77V146Z\" fill=\"#FF4C4C\"></path> </svg>",
+              "<svg width=\"100%\" height=\"320\" viewBox=\"0 0 544 321\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"bar-chart\" style=\"box-sizing: border-box; max-width: 100%; height: 320px; margin-bottom: 24px; display: block;\"> <path d=\"M65.6699 285.67H538.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 215.67H538.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 145.67H538.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 75.67H538.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 5.66998H538.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M144.503 5.66998V285.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M302.17 5.66998V285.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M459.836 5.66998V285.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 5.66998V285.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M538.67 5.66998V285.67\" stroke=\"#CCCCCC\" stroke-dasharray=\"3 3\"></path> <path d=\"M65.6699 285.67H538.67\" stroke=\"#666666\"></path> <path d=\"M144.503 291.67V285.67\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"115.355\" y=\"301.508\">GPT-4o</tspan></text> <path d=\"M302.17 291.67V285.67\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"232.506\" y=\"301.508\">Claude 3.5 Sonnet</tspan></text> <path d=\"M459.837 291.67V285.67\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"402.626\" y=\"301.508\">Llama 3.1 405B</tspan></text> <path d=\"M65.6699 5.66998V285.67\" stroke=\"#666666\"></path> <path d=\"M59.6699 285.67H65.6699\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"47.6699\" y=\"289.248\">0</tspan></text> <path d=\"M59.6699 215.67H65.6699\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"38.248\" y=\"219.248\">25</tspan></text> <path d=\"M59.6699 145.67H65.6699\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"37.9355\" y=\"149.248\">50</tspan></text> <path d=\"M59.6699 75.67H65.6699\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"38.9512\" y=\"79.2482\">75</tspan></text> <path d=\"M59.6699 5.66998H65.6699\" stroke=\"#666666\"></path> <text fill=\"#666666\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"30.2324\" y=\"16.2482\">100</tspan></text> <path d=\"M81.4365 28.91H207.437V285.67H81.4365V28.91Z\" fill=\"#FFBE0C\"></path> <path d=\"M239.103 76H365.103V285.67H239.103V76Z\" fill=\"#49FF71\"></path> <path d=\"M396.77 146H522.77V285.67H396.77V146Z\" fill=\"#FF4C4C\"></path> </svg>",
           }}
         />
       </div>
@@ -146,23 +148,25 @@ const OverallScores: React.FC = () => {
 // PerformanceRadar component
 const PerformanceRadar: React.FC = () => {
   return (
-    <section className="box-border w-[592px] h-[439px] border bg-white p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-sm:h-auto max-sm:p-5">
+    <section className="box-border w-full max-w-[592px] border bg-white p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
       <header className="mb-6">
         <h3 className="text-neutral-950 text-xl font-semibold leading-7 mb-2">Performance Radar</h3>
         <p className="text-[#717182] text-sm font-normal leading-5">Multi-dimensional performance comparison</p>
       </header>
 
-      <div className="mb-6">
+      <div className="mb-6 w-full overflow-x-auto">
         <div
+          className="min-w-[350px] w-full"
+          style={{ maxWidth: "100%", overflowX: "auto" }}
           dangerouslySetInnerHTML={{
             __html:
-              "<svg width=\"544\" height=\"321\" viewBox=\"0 0 544 321\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"radar-chart\" style=\"box-sizing: border-box; width: 543px; height: 320px; margin-bottom: 24px\"> <path d=\"M272.17 132.07L300.77 160.67L272.17 189.27L243.57 160.67L272.17 132.07Z\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 103.47L329.37 160.67L272.17 217.87L214.97 160.67L272.17 103.47Z\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 74.87L357.97 160.67L272.17 246.47L186.37 160.67L272.17 74.87Z\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 46.27L386.57 160.67L272.17 275.07L157.77 160.67L272.17 46.27Z\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 160.67V46.27\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 160.67H386.57\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 160.67V275.07\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 160.67H157.77\" stroke=\"#CCCCCC\"></path> <text fill=\"#808080\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"247.506\" y=\"37.5882\">MMLU</tspan></text> <text fill=\"#808080\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"394.57\" y=\"164.248\">HumanEval</tspan></text> <text fill=\"#808080\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"243.857\" y=\"290.908\">GSM8K</tspan></text> <text fill=\"#808080\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"66.5513\" y=\"164.248\">CLIP Score</tspan></text> <path d=\"M272.17 160.67V46.27\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 59.1972L375.359 160.67L272.17 270.265L166.808 160.67L272.17 59.1972Z\" fill=\"black\" fill-opacity=\"0.1\"></path> <path d=\"M272.17 59.6548L377.418 160.67L272.17 270.952L170.125 160.67L272.17 59.6548Z\" fill=\"black\" fill-opacity=\"0.1\"></path> <path d=\"M272.17 60.7988L373.986 160.67L272.17 271.409V160.67V60.7988Z\" fill=\"black\" fill-opacity=\"0.1\"></path> </svg>",
+              "<svg width=\"100%\" height=\"320\" viewBox=\"0 0 544 321\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"radar-chart\" style=\"box-sizing: border-box; max-width: 100%; height: 320px; margin-bottom: 24px; display: block;\"> <path d=\"M272.17 132.07L300.77 160.67L272.17 189.27L243.57 160.67L272.17 132.07Z\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 103.47L329.37 160.67L272.17 217.87L214.97 160.67L272.17 103.47Z\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 74.87L357.97 160.67L272.17 246.47L186.37 160.67L272.17 74.87Z\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 46.27L386.57 160.67L272.17 275.07L157.77 160.67L272.17 46.27Z\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 160.67V46.27\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 160.67H386.57\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 160.67V275.07\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 160.67H157.77\" stroke=\"#CCCCCC\"></path> <text fill=\"#808080\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"247.506\" y=\"37.5882\">MMLU</tspan></text> <text fill=\"#808080\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"394.57\" y=\"164.248\">HumanEval</tspan></text> <text fill=\"#808080\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"243.857\" y=\"290.908\">GSM8K</tspan></text> <text fill=\"#808080\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"Inter\" font-size=\"16\" letter-spacing=\"0em\"><tspan x=\"66.5513\" y=\"164.248\">CLIP Score</tspan></text> <path d=\"M272.17 160.67V46.27\" stroke=\"#CCCCCC\"></path> <path d=\"M272.17 59.1972L375.359 160.67L272.17 270.265L166.808 160.67L272.17 59.1972Z\" fill=\"black\" fill-opacity=\"0.1\"></path> <path d=\"M272.17 59.6548L377.418 160.67L272.17 270.952L170.125 160.67L272.17 59.6548Z\" fill=\"black\" fill-opacity=\"0.1\"></path> <path d=\"M272.17 60.7988L373.986 160.67L272.17 271.409V160.67V60.7988Z\" fill=\"black\" fill-opacity=\"0.1\"></path> </svg>",
           }}
         />
       </div>
 
-      <div className="flex h-6 items-start gap-2.5 w-full justify-center">
-        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 text-center text-base font-normal leading-6 px-0 py-[1.33px]">
+      <div className="flex h-6 items-start gap-2.5 w-full justify-center flex-wrap overflow-x-auto">
+        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
           <div
             dangerouslySetInnerHTML={{
               __html:
@@ -171,7 +175,7 @@ const PerformanceRadar: React.FC = () => {
           />
           <span className="text-neutral-950 text-center text-base font-normal leading-6">Claude 3.5 Sonnet</span>
         </div>
-        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 text-center text-base font-normal leading-6 px-0 py-[1.33px]">
+        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
           <div
             dangerouslySetInnerHTML={{
               __html:
@@ -180,7 +184,7 @@ const PerformanceRadar: React.FC = () => {
           />
           <span className="text-neutral-950 text-center text-base font-normal leading-6">GPT-4o</span>
         </div>
-        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 text-center text-base font-normal leading-6 px-0 py-[1.33px]">
+        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
           <div
             dangerouslySetInnerHTML={{
               __html:
@@ -251,59 +255,61 @@ const DetailedComparison: React.FC = () => {
   };
 
   return (
-    <section className="box-border w-[1216px] h-[410px] border bg-white p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-sm:h-auto max-sm:p-5">
+    <section className="box-border w-full max-w-[1216px] border bg-white p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
       <header className="mb-6">
         <h3 className="text-neutral-950 text-xl font-semibold leading-7 mb-2">Detailed Comparison</h3>
         <p className="text-[#717182] text-sm font-normal leading-5">Side-by-side feature and performance comparison</p>
       </header>
 
-      <div className="w-full h-9 relative bg-[#F6F3FF] mb-8 rounded-[14px]">
-        <button
-          onClick={() => setActiveTab('performance')}
-          className={`absolute left-[3px] top-1 w-[387px] h-[29px] flex justify-center items-center px-0 py-[5.17px] rounded-lg transition-colors ${
-            activeTab === 'performance'
-              ? 'bg-[#6931C9] text-white'
-              : 'bg-transparent text-[#717182] hover:text-[#6931C9]'
-          }`}
-        >
-          <span className="text-center text-sm font-semibold leading-5">Performance</span>
-        </button>
-        <button
-          onClick={() => setActiveTab('pricing')}
-          className={`absolute left-[393px] top-1 w-[387px] h-[29px] flex justify-center items-center px-0 py-[5.17px] rounded-lg transition-colors ${
-            activeTab === 'pricing'
-              ? 'bg-[#6931C9] text-white'
-              : 'bg-transparent text-[#717182] hover:text-[#6931C9]'
-          }`}
-        >
-          <span className="text-center text-sm font-semibold leading-5">Pricing</span>
-        </button>
-        <button
-          onClick={() => setActiveTab('features')}
-          className={`absolute right-[3px] top-1 w-[387px] h-[29px] flex justify-center items-center px-0 py-[5.17px] rounded-lg transition-colors ${
-            activeTab === 'features'
-              ? 'bg-[#6931C9] text-white'
-              : 'bg-transparent text-[#717182] hover:text-[#6931C9]'
-          }`}
-        >
-          <span className="text-center text-sm font-semibold leading-5">Features</span>
-        </button>
+      <div className="w-full h-9 relative bg-[#F6F3FF] mb-8 rounded-[14px] overflow-x-auto">
+        <div className="flex min-w-[600px] w-full relative">
+          <button
+            onClick={() => setActiveTab('performance')}
+            className={`flex-1 min-w-[180px] flex justify-center items-center px-0 py-[5.17px] rounded-lg transition-colors mx-1 ${
+              activeTab === 'performance'
+                ? 'bg-[#6931C9] text-white'
+                : 'bg-transparent text-[#717182] hover:text-[#6931C9]'
+            }`}
+          >
+            <span className="text-center text-sm font-semibold leading-5">Performance</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('pricing')}
+            className={`flex-1 min-w-[180px] flex justify-center items-center px-0 py-[5.17px] rounded-lg transition-colors mx-1 ${
+              activeTab === 'pricing'
+                ? 'bg-[#6931C9] text-white'
+                : 'bg-transparent text-[#717182] hover:text-[#6931C9]'
+            }`}
+          >
+            <span className="text-center text-sm font-semibold leading-5">Pricing</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('features')}
+            className={`flex-1 min-w-[180px] flex justify-center items-center px-0 py-[5.17px] rounded-lg transition-colors mx-1 ${
+              activeTab === 'features'
+                ? 'bg-[#6931C9] text-white'
+                : 'bg-transparent text-[#717182] hover:text-[#6931C9]'
+            }`}
+          >
+            <span className="text-center text-sm font-semibold leading-5">Features</span>
+          </button>
+        </div>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[600px]">
+      <div className="w-full overflow-x-auto">
+        <table className="w-full min-w-[700px]">
           <thead>
             <tr className="border-b border-[rgba(0,0,0,0.10)]">
-              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4">
+              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
                 {getColumnHeader()}
               </th>
-              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4">
+              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
                 GPT-4o
               </th>
-              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4">
+              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
                 Claude 3.5 Sonnet
               </th>
-              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4">
+              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
                 Llama 3.1 405B
               </th>
             </tr>
@@ -314,16 +320,16 @@ const DetailedComparison: React.FC = () => {
                 key={index}
                 className={`${index < getCurrentData().length - 1 ? 'border-b border-[rgba(0,0,0,0.10)]' : ''}`}
               >
-                <td className="text-neutral-950 text-sm font-normal leading-5 py-3">
+                <td className="text-neutral-950 text-sm font-normal leading-5 py-3 whitespace-nowrap">
                   {'benchmark' in row ? row.benchmark : row.feature}
                 </td>
-                <td className="text-neutral-950 text-sm font-normal leading-5 py-3">
+                <td className="text-neutral-950 text-sm font-normal leading-5 py-3 whitespace-nowrap">
                   {row.gpt4o}
                 </td>
-                <td className="text-neutral-950 text-sm font-normal leading-5 py-3">
+                <td className="text-neutral-950 text-sm font-normal leading-5 py-3 whitespace-nowrap">
                   {row.claude}
                 </td>
-                <td className="text-neutral-950 text-sm font-normal leading-5 py-3">
+                <td className="text-neutral-950 text-sm font-normal leading-5 py-3 whitespace-nowrap">
                   {row.llama}
                 </td>
               </tr>
