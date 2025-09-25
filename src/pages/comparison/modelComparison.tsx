@@ -31,10 +31,10 @@ const ModelCard: React.FC<ModelCardProps> = ({
   isFree = false,
 }) => {
   return (
-    <article className="box-border w-full max-w-[389px] border bg-white p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] flex flex-col justify-between max-md:w-full max-sm:p-4">
+    <article className="box-border w-full max-w-[389px] border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] flex flex-col justify-between max-md:w-full max-sm:p-4">
       <header className="flex items-start justify-between mb-6">
         <div>
-          <h3 className="text-neutral-950 text-xl font-semibold leading-7 mb-1 flex items-center gap-2">
+          <h3 className="text-neutral-950 dark:text-white text-xl font-semibold leading-7 mb-1 flex items-center gap-2">
             {name}
             {isStarred && (
               <div
@@ -45,13 +45,13 @@ const ModelCard: React.FC<ModelCardProps> = ({
               />
             )}
           </h3>
-          <p className="text-[#717182] text-base font-normal leading-6">
+          <p className="text-[#717182] dark:text-neutral-400 text-base font-normal leading-6">
             {company}
           </p>
         </div>
         <div className="flex flex-col gap-1">
           {isAPI && (
-            <div className="flex w-full flex-col justify-center items-center text-[#030213] text-center text-sm font-semibold leading-5 h-[21px] gap-1 bg-purple-100 px-2 py-[2.67px] rounded-lg">
+            <div className="flex w-full flex-col justify-center items-center text-[#030213] dark:text-purple-200 text-center text-sm font-semibold leading-5 h-[21px] gap-1 bg-purple-100 dark:bg-purple-900 px-2 py-[2.67px] rounded-lg">
               <div className="flex items-center gap-1">
                 <div
                   dangerouslySetInnerHTML={{
@@ -59,14 +59,14 @@ const ModelCard: React.FC<ModelCardProps> = ({
                       '<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="api-icon" style="box-sizing: border-box; width: 16px; height: 16px"> <path d="M8.42969 1.33331V14.6666" stroke="#6E11B0" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11.763 3.33331H6.76302C6.14418 3.33331 5.55069 3.57915 5.11311 4.01673C4.67552 4.45432 4.42969 5.04781 4.42969 5.66665C4.42969 6.28548 4.67552 6.87898 5.11311 7.31656C5.55069 7.75415 6.14418 7.99998 6.76302 7.99998H10.0964C10.7152 7.99998 11.3087 8.24581 11.7463 8.6834C12.1839 9.12098 12.4297 9.71447 12.4297 10.3333C12.4297 10.9522 12.1839 11.5456 11.7463 11.9832C11.3087 12.4208 10.7152 12.6666 10.0964 12.6666H4.42969" stroke="#6E11B0" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> </svg>',
                   }}
                 />
-                <span className="text-[#6E11B0] text-center text-xs font-semibold leading-4">
+                <span className="text-[#6E11B0] dark:text-purple-300 text-center text-xs font-semibold leading-4">
                   API
                 </span>
               </div>
             </div>
           )}
           {isOpenSource && (
-            <div className="flex w-[107px] flex-col justify-center items-center text-[#030213] text-center text-sm font-semibold leading-5 h-[21px] gap-1 bg-green-100 px-2 py-[2.67px] rounded-lg">
+            <div className="flex w-[107px] flex-col justify-center items-center text-[#030213] dark:text-green-200 text-center text-sm font-semibold leading-5 h-[21px] gap-1 bg-green-100 dark:bg-green-900 px-2 py-[2.67px] rounded-lg">
               <div className="flex items-center gap-1">
                 <div
                   dangerouslySetInnerHTML={{
@@ -74,7 +74,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
                       '<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="open-source-icon" style="box-sizing: border-box; width: 16px; height: 16px"> <path d="M4.63965 1.99998V9.99998" stroke="#016630" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.6396 5.99998C13.7442 5.99998 14.6396 5.10455 14.6396 3.99998C14.6396 2.89542 13.7442 1.99998 12.6396 1.99998C11.5351 1.99998 10.6396 2.89542 10.6396 3.99998C10.6396 5.10455 11.5351 5.99998 12.6396 5.99998Z" stroke="#016630" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4.63965 14C5.74422 14 6.63965 13.1046 6.63965 12C6.63965 10.8954 5.74422 9.99998 4.63965 9.99998C3.53508 9.99998 2.63965 10.8954 2.63965 12C2.63965 13.1046 3.53508 14 4.63965 14Z" stroke="#016630" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.6396 5.99998C12.6396 7.59128 12.0075 9.11741 10.8823 10.2426C9.75707 11.3678 8.23095 12 6.63965 12" stroke="#016630" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> </svg>',
                   }}
                 />
-                <span className="text-[#030213] text-center text-sm font-semibold leading-5">
+                <span className="text-[#030213] dark:text-green-200 text-center text-sm font-semibold leading-5">
                   Open Source
                 </span>
               </div>
@@ -84,13 +84,13 @@ const ModelCard: React.FC<ModelCardProps> = ({
       </header>
 
       <div className="mb-6">
-        <h4 className="text-[#717182] text-sm font-normal leading-5 mb-2">
+        <h4 className="text-[#717182] dark:text-neutral-400 text-sm font-normal leading-5 mb-2">
           Overall Score
         </h4>
-        <div className="text-neutral-950 text-2xl font-bold leading-8 mb-2">
+        <div className="text-neutral-950 dark:text-white text-2xl font-bold leading-8 mb-2">
           {score}
         </div>
-        <div className="w-full h-2 bg-[#ECECF0] rounded-full">
+        <div className="w-full h-2 bg-[#ECECF0] dark:bg-neutral-800 rounded-full">
           <div
             className="h-2 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full"
             style={{ width: `${parseFloat(score)}%` }}
@@ -100,47 +100,47 @@ const ModelCard: React.FC<ModelCardProps> = ({
 
       <div className="space-y-4 mb-6">
         <div className="flex justify-between items-center">
-          <span className="text-[#717182] text-sm font-normal leading-5">
+          <span className="text-[#717182] dark:text-neutral-400 text-sm font-normal leading-5">
             Type
           </span>
-          <span className="text-neutral-950 text-sm font-normal leading-5 capitalize">
+          <span className="text-neutral-950 dark:text-white text-sm font-normal leading-5 capitalize">
             {type}
           </span>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-[#717182] text-sm font-normal leading-5">
+          <span className="text-[#717182] dark:text-neutral-400 text-sm font-normal leading-5">
             Released
           </span>
-          <span className="text-neutral-950 text-sm font-normal leading-5">
+          <span className="text-neutral-950 dark:text-white text-sm font-normal leading-5">
             {released}
           </span>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-[#717182] text-sm font-normal leading-5">
+          <span className="text-[#717182] dark:text-neutral-400 text-sm font-normal leading-5">
             Cost
           </span>
           {isFree ? (
-            <div className="flex w-10 h-[21px] justify-center items-center border px-2 py-[2.67px] rounded-lg border-solid border-[rgba(0,0,0,0.10)]">
-              <span className="text-[#00A63E] text-center text-xs font-semibold leading-4">
+            <div className="flex w-10 h-[21px] justify-center items-center border px-2 py-[2.67px] rounded-lg border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] bg-white dark:bg-neutral-900">
+              <span className="text-[#00A63E] dark:text-green-300 text-center text-xs font-semibold leading-4">
                 Free
               </span>
             </div>
           ) : (
-            <span className="text-neutral-950 text-sm font-normal leading-5">
+            <span className="text-neutral-950 dark:text-white text-sm font-normal leading-5">
               {cost}
             </span>
           )}
         </div>
       </div>
 
-      <button className="flex w-full justify-center items-center gap-2.5 cursor-pointer border bg-white py-2 px-4 rounded-lg border-solid border-[#6931C9] hover:bg-purple-50 transition-colors">
+      <button className="flex w-full justify-center items-center gap-2.5 cursor-pointer border bg-white dark:bg-neutral-900 py-2 px-4 rounded-lg border-solid border-[#6931C9] dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-900/40 transition-colors">
         <div
           dangerouslySetInnerHTML={{
             __html:
               '<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="view-details-icon" style="box-sizing: border-box; width: 16px; height: 16px"> <path d="M10.7998 2.32999H14.7998V6.32999" stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M7.46631 9.66332L14.7996 2.32999" stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.7998 8.99665V12.9967C12.7998 13.3503 12.6593 13.6894 12.4093 13.9395C12.1592 14.1895 11.8201 14.33 11.4665 14.33H4.13314C3.77952 14.33 3.44038 14.1895 3.19033 13.9395C2.94028 13.6894 2.7998 13.3503 2.7998 12.9967V5.66332C2.7998 5.3097 2.94028 4.97056 3.19033 4.72051C3.44038 4.47046 3.77952 4.32999 4.13314 4.32999H8.13314" stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> </svg>',
           }}
         />
-        <span className="text-neutral-950 text-sm font-medium">
+        <span className="text-neutral-950 dark:text-white text-sm font-medium">
           View Details
         </span>
       </button>
@@ -151,23 +151,68 @@ const ModelCard: React.FC<ModelCardProps> = ({
 // OverallScores component
 const OverallScores: React.FC = () => {
   return (
-    <section className="box-border w-full max-w-[592px] border bg-white p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
+    <section className="box-border w-full max-w-[592px] border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
       <header className="mb-6">
-        <h3 className="text-neutral-950 text-xl font-semibold leading-7 mb-2">
+        <h3 className="text-neutral-950 dark:text-white text-xl font-semibold leading-7 mb-2">
           Overall Scores
         </h3>
-        <p className="text-[#717182] text-sm font-normal leading-5">
+        <p className="text-[#717182] dark:text-neutral-400 text-sm font-normal leading-5">
           Composite performance rankings
         </p>
       </header>
 
       <div className="mb-6 w-full overflow-x-auto">
         <div
-          className="min-w-[350px] w-full"
+          className="min-w-[350px] w-full dark:bg-neutral-900 rounded-lg"
           style={{ maxWidth: "100%", overflowX: "auto" }}
           dangerouslySetInnerHTML={{
             __html:
-              '<svg width="100%" height="320" viewBox="0 0 544 321" fill="none" xmlns="http://www.w3.org/2000/svg" class="bar-chart" style="box-sizing: border-box; max-width: 100%; height: 320px; margin-bottom: 24px; display: block;"> <path d="M65.6699 285.67H538.67" stroke="#CCCCCC" stroke-dasharray="3 3"></path> <path d="M65.6699 215.67H538.67" stroke="#CCCCCC" stroke-dasharray="3 3"></path> <path d="M65.6699 145.67H538.67" stroke="#CCCCCC" stroke-dasharray="3 3"></path> <path d="M65.6699 75.67H538.67" stroke="#CCCCCC" stroke-dasharray="3 3"></path> <path d="M65.6699 5.66998H538.67" stroke="#CCCCCC" stroke-dasharray="3 3"></path> <path d="M144.503 5.66998V285.67" stroke="#CCCCCC" stroke-dasharray="3 3"></path> <path d="M302.17 5.66998V285.67" stroke="#CCCCCC" stroke-dasharray="3 3"></path> <path d="M459.836 5.66998V285.67" stroke="#CCCCCC" stroke-dasharray="3 3"></path> <path d="M65.6699 5.66998V285.67" stroke="#CCCCCC" stroke-dasharray="3 3"></path> <path d="M538.67 5.66998V285.67" stroke="#CCCCCC" stroke-dasharray="3 3"></path> <path d="M65.6699 285.67H538.67" stroke="#666666"></path> <path d="M144.503 291.67V285.67" stroke="#666666"></path> <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="115.355" y="301.508">GPT-4o</tspan></text> <path d="M302.17 291.67V285.67" stroke="#666666"></path> <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="232.506" y="301.508">Claude 3.5 Sonnet</tspan></text> <path d="M459.837 291.67V285.67" stroke="#666666"></path> <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="402.626" y="301.508">Llama 3.1 405B</tspan></text> <path d="M65.6699 5.66998V285.67" stroke="#666666"></path> <path d="M59.6699 285.67H65.6699" stroke="#666666"></path> <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="47.6699" y="289.248">0</tspan></text> <path d="M59.6699 215.67H65.6699" stroke="#666666"></path> <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="38.248" y="219.248">25</tspan></text> <path d="M59.6699 145.67H65.6699" stroke="#666666"></path> <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="37.9355" y="149.248">50</tspan></text> <path d="M59.6699 75.67H65.6699" stroke="#666666"></path> <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="38.9512" y="79.2482">75</tspan></text> <path d="M59.6699 5.66998H65.6699" stroke="#666666"></path> <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="30.2324" y="16.2482">100</tspan></text> <path d="M81.4365 28.91H207.437V285.67H81.4365V28.91Z" fill="#FFBE0C"></path> <path d="M239.103 76H365.103V285.67H239.103V76Z" fill="#49FF71"></path> <path d="M396.77 146H522.77V285.67H396.77V146Z" fill="#FF4C4C"></path> </svg>',
+              `<svg width="100%" height="320" viewBox="0 0 544 321" fill="none" xmlns="http://www.w3.org/2000/svg" class="bar-chart" style="box-sizing: border-box; max-width: 100%; height: 320px; margin-bottom: 24px; display: block; background: transparent;">
+                <g class="grid-lines">
+                  <path d="M65.6699 285.67H538.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
+                  <path d="M65.6699 215.67H538.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
+                  <path d="M65.6699 145.67H538.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
+                  <path d="M65.6699 75.67H538.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
+                  <path d="M65.6699 5.66998H538.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
+                  <path d="M144.503 5.66998V285.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
+                  <path d="M302.17 5.66998V285.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
+                  <path d="M459.836 5.66998V285.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
+                  <path d="M65.6699 5.66998V285.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
+                  <path d="M538.67 5.66998V285.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
+                </g>
+                <g class="axes">
+                  <path d="M65.6699 285.67H538.67" stroke="#666666"/>
+                  <path d="M144.503 291.67V285.67" stroke="#666666"/>
+                  <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="115.355" y="301.508">GPT-4o</tspan></text>
+                  <path d="M302.17 291.67V285.67" stroke="#666666"/>
+                  <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="232.506" y="301.508">Claude 3.5 Sonnet</tspan></text>
+                  <path d="M459.837 291.67V285.67" stroke="#666666"/>
+                  <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="402.626" y="301.508">Llama 3.1 405B</tspan></text>
+                  <path d="M65.6699 5.66998V285.67" stroke="#666666"/>
+                  <path d="M59.6699 285.67H65.6699" stroke="#666666"/>
+                  <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="47.6699" y="289.248">0</tspan></text>
+                  <path d="M59.6699 215.67H65.6699" stroke="#666666"/>
+                  <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="38.248" y="219.248">25</tspan></text>
+                  <path d="M59.6699 145.67H65.6699" stroke="#666666"/>
+                  <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="37.9355" y="149.248">50</tspan></text>
+                  <path d="M59.6699 75.67H65.6699" stroke="#666666"/>
+                  <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="38.9512" y="79.2482">75</tspan></text>
+                  <path d="M59.6699 5.66998H65.6699" stroke="#666666"/>
+                  <text fill="#666666" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="30.2324" y="16.2482">100</tspan></text>
+                </g>
+                <g class="bars">
+                  <path d="M81.4365 28.91H207.437V285.67H81.4365V28.91Z" fill="#FFBE0C"/>
+                  <path d="M239.103 76H365.103V285.67H239.103V76Z" fill="#49FF71"/>
+                  <path d="M396.77 146H522.77V285.67H396.77V146Z" fill="#FF4C4C"/>
+                </g>
+                <style>
+                  @media (prefers-color-scheme: dark) {
+                    .bar-chart .light-grid { stroke: #333333 !important; }
+                    .bar-chart .axes path, .bar-chart .axes text { stroke: #BBBBBB !important; fill: #BBBBBB !important; }
+                    .bar-chart .bars path { opacity: 0.85; }
+                  }
+                </style>
+              </svg>`,
           }}
         />
       </div>
@@ -178,58 +223,97 @@ const OverallScores: React.FC = () => {
 // PerformanceRadar component
 const PerformanceRadar: React.FC = () => {
   return (
-    <section className="box-border w-full max-w-[592px] border bg-white p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
+    <section className="box-border w-full max-w-[592px] border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
       <header className="mb-6">
-        <h3 className="text-neutral-950 text-xl font-semibold leading-7 mb-2">
+        <h3 className="text-neutral-950 dark:text-white text-xl font-semibold leading-7 mb-2">
           Performance Radar
         </h3>
-        <p className="text-[#717182] text-sm font-normal leading-5">
+        <p className="text-[#717182] dark:text-neutral-400 text-sm font-normal leading-5">
           Multi-dimensional performance comparison
         </p>
       </header>
 
       <div className="mb-6 w-full overflow-x-auto">
         <div
-          className="min-w-[350px] w-full"
+          className="min-w-[350px] w-full dark:bg-neutral-900 rounded-lg"
           style={{ maxWidth: "100%", overflowX: "auto" }}
           dangerouslySetInnerHTML={{
             __html:
-              '<svg width="100%" height="320" viewBox="0 0 544 321" fill="none" xmlns="http://www.w3.org/2000/svg" class="radar-chart" style="box-sizing: border-box; max-width: 100%; height: 320px; margin-bottom: 24px; display: block;"> <path d="M272.17 132.07L300.77 160.67L272.17 189.27L243.57 160.67L272.17 132.07Z" stroke="#CCCCCC"></path> <path d="M272.17 103.47L329.37 160.67L272.17 217.87L214.97 160.67L272.17 103.47Z" stroke="#CCCCCC"></path> <path d="M272.17 74.87L357.97 160.67L272.17 246.47L186.37 160.67L272.17 74.87Z" stroke="#CCCCCC"></path> <path d="M272.17 46.27L386.57 160.67L272.17 275.07L157.77 160.67L272.17 46.27Z" stroke="#CCCCCC"></path> <path d="M272.17 160.67V46.27" stroke="#CCCCCC"></path> <path d="M272.17 160.67H386.57" stroke="#CCCCCC"></path> <path d="M272.17 160.67V275.07" stroke="#CCCCCC"></path> <path d="M272.17 160.67H157.77" stroke="#CCCCCC"></path> <text fill="#808080" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="247.506" y="37.5882">MMLU</tspan></text> <text fill="#808080" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="394.57" y="164.248">HumanEval</tspan></text> <text fill="#808080" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="243.857" y="290.908">GSM8K</tspan></text> <text fill="#808080" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="66.5513" y="164.248">CLIP Score</tspan></text> <path d="M272.17 160.67V46.27" stroke="#CCCCCC"></path> <path d="M272.17 59.1972L375.359 160.67L272.17 270.265L166.808 160.67L272.17 59.1972Z" fill="black" fill-opacity="0.1"></path> <path d="M272.17 59.6548L377.418 160.67L272.17 270.952L170.125 160.67L272.17 59.6548Z" fill="black" fill-opacity="0.1"></path> <path d="M272.17 60.7988L373.986 160.67L272.17 271.409V160.67V60.7988Z" fill="black" fill-opacity="0.1"></path> </svg>',
+              `<svg width="100%" height="320" viewBox="0 0 544 321" fill="none" xmlns="http://www.w3.org/2000/svg" class="radar-chart" style="box-sizing: border-box; max-width: 100%; height: 320px; margin-bottom: 24px; display: block; background: transparent;">
+                <style>
+                  @media (prefers-color-scheme: dark) {
+                    .radar-chart .radar-grid { stroke: #333333 !important; }
+                    .radar-chart .radar-label { fill: #BBBBBB !important; }
+                    .radar-chart .radar-fill { fill: #fff !important; opacity: 0.08 !important; }
+                  }
+                </style>
+                <path class="radar-grid" d="M272.17 132.07L300.77 160.67L272.17 189.27L243.57 160.67L272.17 132.07Z" stroke="#CCCCCC"></path>
+                <path class="radar-grid" d="M272.17 103.47L329.37 160.67L272.17 217.87L214.97 160.67L272.17 103.47Z" stroke="#CCCCCC"></path>
+                <path class="radar-grid" d="M272.17 74.87L357.97 160.67L272.17 246.47L186.37 160.67L272.17 74.87Z" stroke="#CCCCCC"></path>
+                <path class="radar-grid" d="M272.17 46.27L386.57 160.67L272.17 275.07L157.77 160.67L272.17 46.27Z" stroke="#CCCCCC"></path>
+                <path class="radar-grid" d="M272.17 160.67V46.27" stroke="#CCCCCC"></path>
+                <path class="radar-grid" d="M272.17 160.67H386.57" stroke="#CCCCCC"></path>
+                <path class="radar-grid" d="M272.17 160.67V275.07" stroke="#CCCCCC"></path>
+                <path class="radar-grid" d="M272.17 160.67H157.77" stroke="#CCCCCC"></path>
+                <text class="radar-label" fill="#808080" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="247.506" y="37.5882">MMLU</tspan></text>
+                <text class="radar-label" fill="#808080" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="394.57" y="164.248">HumanEval</tspan></text>
+                <text class="radar-label" fill="#808080" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="243.857" y="290.908">GSM8K</tspan></text>
+                <text class="radar-label" fill="#808080" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="16" letter-spacing="0em"><tspan x="66.5513" y="164.248">CLIP Score</tspan></text>
+                <path class="radar-grid" d="M272.17 160.67V46.27" stroke="#CCCCCC"></path>
+                <path class="radar-fill" d="M272.17 59.1972L375.359 160.67L272.17 270.265L166.808 160.67L272.17 59.1972Z" fill="black" fill-opacity="0.1"></path>
+                <path class="radar-fill" d="M272.17 59.6548L377.418 160.67L272.17 270.952L170.125 160.67L272.17 59.6548Z" fill="black" fill-opacity="0.1"></path>
+                <path class="radar-fill" d="M272.17 60.7988L373.986 160.67L272.17 271.409V160.67V60.7988Z" fill="black" fill-opacity="0.1"></path>
+              </svg>`,
           }}
         />
       </div>
 
       <div className="flex h-6 items-start gap-2.5 w-full justify-center flex-wrap overflow-x-auto">
-        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
+        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 dark:text-white text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
           <div
             dangerouslySetInnerHTML={{
               __html:
-                '<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px"> <path d="M0.790039 2.08002H14.79V12.58H0.790039V2.08002Z" fill="black"></path> </svg>',
+                `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px">
+                  <style>
+                    @media (prefers-color-scheme: dark) { .legend-rect { fill: #fff !important; opacity: 0.8 !important; } }
+                  </style>
+                  <rect class="legend-rect" x="0.79" y="2.08" width="14" height="10.5" fill="black"/>
+                </svg>`,
             }}
           />
-          <span className="text-neutral-950 text-center text-base font-normal leading-6">
+          <span className="text-neutral-950 dark:text-white text-center text-base font-normal leading-6">
             Claude 3.5 Sonnet
           </span>
         </div>
-        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
+        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 dark:text-white text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
           <div
             dangerouslySetInnerHTML={{
               __html:
-                '<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px"> <path d="M0.819824 2.08002H14.8198V12.58H0.819824V2.08002Z" fill="black"></path> </svg>',
+                `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px">
+                  <style>
+                    @media (prefers-color-scheme: dark) { .legend-rect { fill: #fff !important; opacity: 0.8 !important; } }
+                  </style>
+                  <rect class="legend-rect" x="0.8198" y="2.08" width="14" height="10.5" fill="black"/>
+                </svg>`,
             }}
           />
-          <span className="text-neutral-950 text-center text-base font-normal leading-6">
+          <span className="text-neutral-950 dark:text-white text-center text-base font-normal leading-6">
             GPT-4o
           </span>
         </div>
-        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
+        <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 dark:text-white text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
           <div
             dangerouslySetInnerHTML={{
               __html:
-                '<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px"> <path d="M0.540039 2.08002H14.54V12.58H0.540039V2.08002Z" fill="black"></path> </svg>',
+                `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px">
+                  <style>
+                    @media (prefers-color-scheme: dark) { .legend-rect { fill: #fff !important; opacity: 0.8 !important; } }
+                  </style>
+                  <rect class="legend-rect" x="0.54" y="2.08" width="14" height="10.5" fill="black"/>
+                </svg>`,
             }}
           />
-          <span className="text-neutral-950 text-center text-base font-normal leading-6">
+          <span className="text-neutral-950 dark:text-white text-center text-base font-normal leading-6">
             Llama 3.1 405B
           </span>
         </div>
@@ -330,24 +414,24 @@ const DetailedComparison: React.FC = () => {
   };
 
   return (
-    <section className="box-border w-full max-w-[1216px] border bg-white p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
+    <section className="box-border w-full max-w-[1216px] border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
       <header className="mb-6">
-        <h3 className="text-neutral-950 text-xl font-semibold leading-7 mb-2">
+        <h3 className="text-neutral-950 dark:text-white text-xl font-semibold leading-7 mb-2">
           Detailed Comparison
         </h3>
-        <p className="text-[#717182] text-sm font-normal leading-5">
+        <p className="text-[#717182] dark:text-neutral-400 text-sm font-normal leading-5">
           Side-by-side feature and performance comparison
         </p>
       </header>
 
-      <div className="w-full h-9 relative bg-[#F6F3FF] mb-8 rounded-[14px] overflow-x-auto">
+      <div className="w-full h-9 relative bg-[#F6F3FF] dark:bg-neutral-800 mb-8 rounded-[14px] overflow-x-auto">
         <div className="flex min-w-[600px] w-full relative">
           <button
             onClick={() => setActiveTab("performance")}
             className={`flex-1 min-w-[180px] flex justify-center items-center px-0 py-[5.17px] rounded-lg transition-colors mx-1 ${
               activeTab === "performance"
-                ? "bg-[#6931C9] text-white"
-                : "bg-transparent text-[#717182] hover:text-[#6931C9]"
+                ? "bg-[#6931C9] text-white dark:bg-purple-700 dark:text-white"
+                : "bg-transparent text-[#717182] dark:text-neutral-300 hover:text-[#6931C9] dark:hover:text-purple-400"
             }`}
           >
             <span className="text-center text-sm font-semibold leading-5">
@@ -358,8 +442,8 @@ const DetailedComparison: React.FC = () => {
             onClick={() => setActiveTab("pricing")}
             className={`flex-1 min-w-[180px] flex justify-center items-center px-0 py-[5.17px] rounded-lg transition-colors mx-1 ${
               activeTab === "pricing"
-                ? "bg-[#6931C9] text-white"
-                : "bg-transparent text-[#717182] hover:text-[#6931C9]"
+                ? "bg-[#6931C9] text-white dark:bg-purple-700 dark:text-white"
+                : "bg-transparent text-[#717182] dark:text-neutral-300 hover:text-[#6931C9] dark:hover:text-purple-400"
             }`}
           >
             <span className="text-center text-sm font-semibold leading-5">
@@ -370,8 +454,8 @@ const DetailedComparison: React.FC = () => {
             onClick={() => setActiveTab("features")}
             className={`flex-1 min-w-[180px] flex justify-center items-center px-0 py-[5.17px] rounded-lg transition-colors mx-1 ${
               activeTab === "features"
-                ? "bg-[#6931C9] text-white"
-                : "bg-transparent text-[#717182] hover:text-[#6931C9]"
+                ? "bg-[#6931C9] text-white dark:bg-purple-700 dark:text-white"
+                : "bg-transparent text-[#717182] dark:text-neutral-300 hover:text-[#6931C9] dark:hover:text-purple-400"
             }`}
           >
             <span className="text-center text-sm font-semibold leading-5">
@@ -384,17 +468,17 @@ const DetailedComparison: React.FC = () => {
       <div className="w-full overflow-x-auto">
         <table className="w-full min-w-[700px]">
           <thead>
-            <tr className="border-b border-[rgba(0,0,0,0.10)]">
-              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
+            <tr className="border-b border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)]">
+              <th className="text-left text-[#717182] dark:text-neutral-400 text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
                 {getColumnHeader()}
               </th>
-              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
+              <th className="text-left text-[#717182] dark:text-neutral-400 text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
                 GPT-4o
               </th>
-              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
+              <th className="text-left text-[#717182] dark:text-neutral-400 text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
                 Claude 3.5 Sonnet
               </th>
-              <th className="text-left text-[#717182] text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
+              <th className="text-left text-[#717182] dark:text-neutral-400 text-sm font-semibold leading-5 py-3 w-1/4 whitespace-nowrap">
                 Llama 3.1 405B
               </th>
             </tr>
@@ -405,20 +489,20 @@ const DetailedComparison: React.FC = () => {
                 key={index}
                 className={`${
                   index < getCurrentData().length - 1
-                    ? "border-b border-[rgba(0,0,0,0.10)]"
+                    ? "border-b border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)]"
                     : ""
-                }`}
+                } ${index % 2 === 1 ? "bg-[#F6F3FF] dark:bg-neutral-800" : ""}`}
               >
-                <td className="text-neutral-950 text-sm font-normal leading-5 py-3 whitespace-nowrap">
+                <td className="text-neutral-950 dark:text-white text-sm font-normal leading-5 py-3 whitespace-nowrap">
                   {"benchmark" in row ? row.benchmark : row.feature}
                 </td>
-                <td className="text-neutral-950 text-sm font-normal leading-5 py-3 whitespace-nowrap">
+                <td className="text-neutral-950 dark:text-white text-sm font-normal leading-5 py-3 whitespace-nowrap">
                   {row.gpt4o}
                 </td>
-                <td className="text-neutral-950 text-sm font-normal leading-5 py-3 whitespace-nowrap">
+                <td className="text-neutral-950 dark:text-white text-sm font-normal leading-5 py-3 whitespace-nowrap">
                   {row.claude}
                 </td>
-                <td className="text-neutral-950 text-sm font-normal leading-5 py-3 whitespace-nowrap">
+                <td className="text-neutral-950 dark:text-white text-sm font-normal leading-5 py-3 whitespace-nowrap">
                   {row.llama}
                 </td>
               </tr>
@@ -437,40 +521,40 @@ const ModelComparisonPage = () => {
       <div className="box-border flex w-full min-h-screen flex-col justify-center items-start bg-white dark:bg-black">
         <div className="box-border flex w-full flex-col justify-start items-start bg-white dark:bg-black">
           <Navigation />
-          <main className="box-border flex w-full flex-col justify-center items-center min-h-[calc(100vh_-_65px_-_309px)] bg-[#F6F3FF] dark:bg-black px-20 py-8 max-md:px-10 max-md:py-8 max-sm:p-5">
+          <main className="box-border flex w-full flex-col justify-center items-center min-h-[calc(100vh_-_65px_-_309px)] bg-[#F6F3FF] dark:bg-neutral-950 px-20 py-8 max-md:px-10 max-md:py-8 max-sm:p-5">
             <div className="box-border w-full max-w-screen-xl relative">
               {/* Back Button */}
-              <button className="box-border flex w-[187px] justify-start items-center gap-4 cursor-pointer mb-4 pl-3 pr-[11.699px] pt-[8.66px] pb-[8.67px] rounded-lg hover:bg-white/50 transition-colors">
+              <button className="box-border flex w-[187px] justify-start items-center gap-4 cursor-pointer mb-4 pl-3 pr-[11.699px] pt-[8.66px] pb-[8.67px] rounded-lg hover:bg-white/50 dark:hover:bg-neutral-800/60 transition-colors">
                 <div
                   dangerouslySetInnerHTML={{
                     __html:
                       '<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="back-arrow" style="box-sizing: border-box; width: 16px; height: 16px"> <path d="M8.00016 13.3367L3.3335 8.66999L8.00016 4.00333" stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.6668 8.66998H3.3335" stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> </svg>',
                   }}
                 />
-                <span className="text-neutral-950 text-sm font-medium">
+                <span className="text-neutral-950 dark:text-white text-sm font-medium">
                   Back to Leaderboard
                 </span>
               </button>
 
               {/* Page Header */}
               <header className="mb-8">
-                <h1 className="text-neutral-950 text-4xl font-bold leading-10 mb-2">
+                <h1 className="text-neutral-950 dark:text-white text-4xl font-bold leading-10 mb-2">
                   Model Comparison
                 </h1>
-                <p className="text-[#717182] text-lg font-normal leading-7">
+                <p className="text-[#717182] dark:text-neutral-400 text-lg font-normal leading-7">
                   Side-by-side comparison of 3 AI models
                 </p>
               </header>
 
               {/* Model Tags */}
               <div className="flex flex-wrap gap-2 mb-8 max-md:mb-6">
-                <div className="flex w-[65px] flex-col justify-center items-center h-[25px] text-[#030213] text-center text-sm font-semibold leading-5 bg-[#ECEEF2] px-2 py-[3.33px] rounded-lg">
+                <div className="flex w-[65px] flex-col justify-center items-center h-[25px] text-[#030213] dark:text-white text-center text-sm font-semibold leading-5 bg-[#ECEEF2] dark:bg-neutral-800 px-2 py-[3.33px] rounded-lg">
                   GPT-4o
                 </div>
-                <div className="flex w-[132px] flex-col justify-center items-center h-[25px] text-[#030213] text-center text-sm font-semibold leading-5 bg-[#ECEEF2] px-2 py-[3.33px] rounded-lg">
+                <div className="flex w-[132px] flex-col justify-center items-center h-[25px] text-[#030213] dark:text-white text-center text-sm font-semibold leading-5 bg-[#ECEEF2] dark:bg-neutral-800 px-2 py-[3.33px] rounded-lg">
                   Claude 3.5 Sonnet
                 </div>
-                <div className="flex w-[111px] flex-col justify-center items-center h-[25px] text-[#030213] text-center text-sm font-semibold leading-5 bg-[#ECEEF2] px-2 py-[3.33px] rounded-lg">
+                <div className="flex w-[111px] flex-col justify-center items-center h-[25px] text-[#030213] dark:text-white text-center text-sm font-semibold leading-5 bg-[#ECEEF2] dark:bg-neutral-800 px-2 py-[3.33px] rounded-lg">
                   Llama 3.1 405B
                 </div>
               </div>
