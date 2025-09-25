@@ -72,7 +72,7 @@ const LeaderboardPreview = () => {
   };
 
   return (
-    <section className="w-full flex flex-col items-center px-20 py-16 max-md:px-10 max-md:py-12 max-sm:px-5 max-sm:py-8 dark:bg-black">
+    <section className="w-full flex flex-col items-center px-20 py-16 max-md:px-10 max-md:py-12 max-sm:px-4 max-sm:py-6 dark:bg-black">
       <h2 className="text-3xl font-semibold leading-9 text-neutral-950 dark:text-white text-center mb-4 max-sm:text-2xl max-sm:leading-[30px]">
         Leaderboard Preview
       </h2>
@@ -81,7 +81,7 @@ const LeaderboardPreview = () => {
         Top performing models across different modalities
       </p>
 
-      <div className="w-full max-w-6xl relative bg-white dark:bg-black p-[25px] rounded-xl border border-gray-300 dark:border-gray-700 max-sm:overflow-x-auto max-sm:p-4">
+      <div className="w-full max-w-6xl relative bg-white dark:bg-black p-6 rounded-xl border border-gray-300 dark:border-gray-700 overflow-x-auto max-sm:p-4">
         <h4 className="text-base font-semibold leading-4 text-neutral-950 dark:text-white mb-2">
           Top Models
         </h4>
@@ -90,7 +90,7 @@ const LeaderboardPreview = () => {
           Ranked by overall performance scores
         </p>
 
-        <div className="absolute right-[25px] top-7 max-md:static max-md:mb-6">
+        <div className="absolute right-6 top-7 max-md:static max-md:mb-6">
           <CategoryFilter
             categories={categories}
             onCategoryChange={handleCategoryChange}
@@ -98,21 +98,21 @@ const LeaderboardPreview = () => {
           />
         </div>
 
-        <div className="w-full max-sm:min-w-[800px]">
+        <div className="w-full min-w-[800px]">
           <div className="w-full h-10 flex items-center border-b border-gray-200 dark:border-gray-700 max-md:text-xs">
-            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-10 pl-2">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[60px] pl-2">
               Rank
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[200px] pl-[89px] max-md:w-[150px] max-md:pl-[60px]">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[160px] pl-8">
               Model
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[150px] pl-7 max-md:w-[120px] max-md:pl-5">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[120px] pl-4">
               Organization
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-20 pl-5">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[80px] pl-3">
               Score
             </div>
-            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[120px] pl-5">
+            <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[100px] pl-3">
               License
             </div>
             <div className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white flex-1 flex justify-end">
@@ -127,7 +127,7 @@ const LeaderboardPreview = () => {
                 className="flex w-full h-[57px] items-center relative border-b border-gray-200 dark:border-gray-700 max-md:text-xs"
               >
                 <div
-                  className={`w-[29px] h-[21px] flex items-center justify-center ml-2 rounded-lg ${
+                  className={`min-w-[60px] h-[21px] flex items-center justify-center ml-2 rounded-lg ${
                     item.rank === 1
                       ? "bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)]"
                       : "bg-[#F1EBFF] dark:bg-[#232136]"
@@ -144,7 +144,7 @@ const LeaderboardPreview = () => {
                   </span>
                 </div>
 
-                <div className="w-[200px] flex flex-col justify-center pl-[58px]">
+                <div className="min-w-[160px] flex flex-col justify-center pl-8">
                   <div className="text-sm font-normal leading-5 text-neutral-950 dark:text-white capitalize">
                     {item.model}
                   </div>
@@ -153,15 +153,15 @@ const LeaderboardPreview = () => {
                   </div>
                 </div>
 
-                <div className="w-[150px] text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-7">
+                <div className="min-w-[120px] text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-4">
                   {item.organization}
                 </div>
 
-                <div className="w-20 text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-5">
+                <div className="min-w-[80px] text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-3">
                   {item.score}
                 </div>
 
-                <div className="w-auto min-w-9 h-[21px] border flex items-center justify-center ml-5 px-[8.66px] py-[2.67px] rounded-lg border border-gray-300 dark:border-gray-700 bg-[#F1EBFF] dark:bg-[#232136]">
+                <div className="min-w-[100px] h-[21px] border flex items-center justify-center ml-3 px-2 py-1 rounded-lg border border-gray-300 dark:border-gray-700 bg-[#F1EBFF] dark:bg-[#232136]">
                   <span className="text-xs font-semibold leading-4 text-neutral-950 dark:text-white text-center">
                     {item.license}
                   </span>

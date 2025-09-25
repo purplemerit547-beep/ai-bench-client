@@ -34,7 +34,7 @@ const CostCalculator: React.FC = () => {
   };
 
   return (
-    <aside className="box-border w-96 border bg-white dark:bg-neutral-900 p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-md:mb-6 max-sm:p-5">
+    <aside className="box-border w-full max-w-md border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:w-full max-md:mb-6 max-sm:p-4">
       <header className="box-border flex items-center gap-2 mb-4">
         <svg
           width="20"
@@ -222,7 +222,7 @@ const CostCalculator: React.FC = () => {
 // CostComparison component
 const CostComparison: React.FC = () => {
   return (
-    <section className="box-border w-full lg:w-[800px] border bg-white dark:bg-neutral-900 p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:p-5">
+    <section className="box-border w-full max-w-2xl border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:p-4">
       <header className="mb-6">
         <h2 className="box-border text-neutral-950 dark:text-white text-base font-semibold leading-4 mb-2">
           Cost Comparison
@@ -400,7 +400,7 @@ const CostEstimates: React.FC = () => {
   ];
 
   return (
-    <section className="box-border w-full lg:w-[800px] border bg-white dark:bg-neutral-900 p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:p-5">
+    <section className="box-border w-full max-w-2xl border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:p-4">
       <header className="mb-6">
         <h2 className="box-border text-neutral-950 dark:text-white text-base font-semibold leading-4 mb-2">
           Cost Estimates
@@ -441,7 +441,7 @@ const PerformanceAnalysis: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Cost vs Score");
 
   return (
-    <section className="box-border w-full border bg-white dark:bg-neutral-900 p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:p-5">
+    <section className="box-border w-full border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:p-4">
       <header className="mb-6">
         <div className="box-border flex items-center gap-2 mb-4">
           <svg
@@ -853,7 +853,7 @@ const PricingInfo: React.FC = () => {
   ];
 
   return (
-    <section className="box-border w-full border grid grid-cols-1 md:grid-cols-3 gap-10 bg-white dark:bg-neutral-900 p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:gap-6 max-sm:p-5">
+    <section className="box-border w-full border grid grid-cols-1 md:grid-cols-3 gap-10 bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-md:gap-6 max-sm:p-4">
       <header className="col-span-full mb-6">
         <h2 className="box-border text-neutral-950 dark:text-white text-base font-semibold leading-4 mb-2">
           Understanding AI Model Pricing
@@ -892,7 +892,7 @@ const Pricing: React.FC = () => {
   return (
     <div className="box-border w-full min-h-screen relative bg-white dark:bg-black">
       <Navigation />
-      <main className="box-border w-full min-h-[calc(100vh_-_65px)] bg-[#F6F3FF] dark:bg-black mt-[65px] px-20 py-8 max-md:px-10 max-md:py-8 max-sm:p-5">
+      <main className="box-border w-full min-h-[calc(100vh_-_65px)] bg-[#F6F3FF] dark:bg-black mt-[65px] px-8 py-8 max-md:px-4 max-md:py-8 max-sm:px-2 max-sm:py-4">
         <div className="box-border max-w-screen-xl relative mx-auto">
           <header className="mb-12">
             <h1 className="box-border text-neutral-950 dark:text-white text-3xl font-semibold leading-9 mb-4 max-sm:text-2xl max-sm:leading-[30px]">
@@ -903,7 +903,7 @@ const Pricing: React.FC = () => {
               cost-effective AI models for your needs
             </p>
           </header>
-          <div className="grid grid-cols-1 lg:grid-cols-[384px_1fr] gap-6 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
             <CostCalculator />
             <div className="space-y-6">
               <CostEstimates />

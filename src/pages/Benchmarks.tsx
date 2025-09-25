@@ -71,7 +71,7 @@ const ChartControls: React.FC<ChartControlsProps> = ({ className = '' }) => {
   const [selectedBenchmark, setSelectedBenchmark] = useState('Overview');
 
   return (
-    <aside className={`bg-white dark:bg-neutral-900 border flex w-full flex-col mx-auto pt-6 pb-[151px] px-[25px] rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:mt-6 max-md:pb-[100px] max-md:px-5 ${className}`}>
+    <aside className={`bg-white dark:bg-neutral-900 border flex w-full flex-col mx-auto pt-6 pb-[151px] px-6 rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:mt-6 max-md:pb-[100px] max-md:px-4 max-sm:px-2 ${className}`}>
       <div className="flex items-stretch gap-2 text-base text-neutral-950 dark:text-white font-normal leading-none mb-9">
         <img
           src="https://api.builder.io/api/v1/image/assets/35de5dc00516421d9aa405b4c562fade/bfb143761be4f4e487dcc09076eb425c251c4097?placeholderIfAbsent=true"
@@ -133,7 +133,7 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ className = '' }) => {
   const selectedModels = ['GPT-4o', 'Claude 3.5 Sonnet', 'Llama 3.1 405B', 'Gemini 1.5 Pro'];
 
   return (
-    <section className={`bg-white dark:bg-neutral-900 border flex w-full flex-col mx-auto pt-[27px] pb-[13px] px-[25px] rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:max-w-full max-md:mt-6 max-md:px-5 ${className}`}>
+    <section className={`bg-white dark:bg-neutral-900 border flex w-full flex-col mx-auto pt-7 pb-3 px-6 rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:max-w-full max-md:mt-6 max-md:px-4 max-sm:px-2 ${className}`}>
       <header className="mb-[31px]">
         <h2 className="text-neutral-950 dark:text-white text-base font-semibold leading-none mb-[7px]">
           Benchmark Overview
@@ -152,10 +152,10 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ className = '' }) => {
           </div>
         ))}
       </div>
-      <div className="self-stretch flex flex-wrap ml-[23px]">
-        <div className="w-0.5 shrink-0 h-[378px] border-black border-solid border-2" />
-        <div className="flex w-fit flex-col items-center grow shrink-0 basis-0 mt-[19px] max-md:max-w-full">
-          <div className="w-[643px] max-w-full">
+      <div className="self-stretch flex flex-wrap ml-6 max-md:ml-0">
+        <div className="w-0.5 shrink-0 h-[378px] border-black border-solid border-2 max-sm:hidden" />
+        <div className="flex w-fit flex-col items-center grow shrink-0 basis-0 mt-5 max-md:max-w-full">
+          <div className="w-full max-w-full overflow-x-auto">
             <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
               {chartData.map((data, index) => (
                 <div
@@ -178,7 +178,7 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ className = '' }) => {
             </div>
           </div>
           <div className="border self-stretch shrink-0 h-px border-black border-solid max-md:max-w-full" />
-          <div className="flex w-[623px] max-w-full items-stretch gap-[40px_70px] text-base text-black dark:text-white font-normal leading-none ml-[11px] mt-2.5">
+          <div className="flex w-full max-w-full items-stretch gap-8 text-base text-black dark:text-white font-normal leading-none ml-3 mt-2.5 max-md:ml-0">
             <span>GPT-4o</span>
             <span>Claude 3.5</span>
             <span className="grow shrink w-[91px]">
@@ -213,10 +213,10 @@ const BenchmarksPage = () => {
               </header>
               <section className="self-stretch max-md:max-w-full">
                 <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
-                  <div className="w-[24%] max-md:w-full max-md:ml-0">
+                  <div className="w-[24%] max-lg:w-[35%] max-md:w-full max-md:ml-0">
                     <ChartControls />
                   </div>
-                  <div className="w-[76%] ml-5 max-md:w-full max-md:ml-0">
+                  <div className="w-[76%] ml-5 max-lg:w-[65%] max-md:w-full max-md:ml-0">
                     <BenchmarkChart />
                   </div>
                 </div>

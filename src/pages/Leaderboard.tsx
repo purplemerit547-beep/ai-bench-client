@@ -212,7 +212,7 @@ export default function Leaderboard() {
     <div className="min-h-screen bg-[#F1EBFF] dark:bg-black dark:text-white">
       <Navigation />
 
-      <main className="px-20 py-8">
+      <main className="px-8 py-8 max-md:px-4 max-sm:px-2">
         <div className="max-w-7xl mx-auto">
           {/* Title Section */}
           <div className="mb-8">
@@ -226,7 +226,7 @@ export default function Leaderboard() {
           </div>
 
           {/* Filters Card */}
-          <div className="w-full max-w-6xl mx-auto border relative bg-white dark:bg-neutral-900 p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-neutral-800 mb-8">
+          <div className="w-full max-w-6xl mx-auto border relative bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-neutral-800 mb-8 max-md:p-4 max-sm:p-2">
             <div className="mb-6">
               <h3 className="text-base font-semibold text-neutral-950 dark:text-white mb-1">
                 Filters
@@ -262,7 +262,7 @@ export default function Leaderboard() {
             </div>
 
             {/* Dropdowns */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 max-md:flex-col">
               <div className="flex-1">
                 <label className="block text-sm text-neutral-950 dark:text-white mb-2">
                   License
@@ -299,7 +299,7 @@ export default function Leaderboard() {
           </div>
 
           {/* Results Card */}
-          <div className="w-full max-w-6xl mx-auto border relative bg-white dark:bg-neutral-900 p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-neutral-800 overflow-hidden">
+          <div className="w-full max-w-6xl mx-auto border relative bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-neutral-800 overflow-hidden max-md:p-4 max-sm:p-2">
             <div className="pb-0">
               <h3 className="text-base font-semibold text-neutral-950 dark:text-white mb-1">
                 Results (9 models)
@@ -310,28 +310,28 @@ export default function Leaderboard() {
             </div>
 
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full min-w-[900px]">
                 <thead className="border-b-[0.667px] border-b-[rgba(0,0,0,0.10)] border-solid">
                   <tr>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-10 pl-2 text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[60px] pl-2 text-left">
                       Rank
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[200px] pl-[89px] text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[160px] pl-8 text-left">
                       Model
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[150px] pl-7 text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[120px] pl-4 text-left">
                       Organization
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-20 pl-5 text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[80px] pl-3 text-left">
                       Score
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[120px] pl-5 text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[100px] pl-3 text-left">
                       Cost
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white w-[120px] pl-5 text-left">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[100px] pl-3 text-left">
                       License
                     </th>
-                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white text-left pl-16">
+                    <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white min-w-[100px] text-left pl-8">
                       Released
                     </th>
                     <th className="text-sm font-semibold leading-5 text-neutral-950 dark:text-white flex-1 flex justify-end text-left">
@@ -413,7 +413,7 @@ export default function Leaderboard() {
                             </tr>
                           )}
                         <tr className="border-b-[0.667px] border-b-[rgba(0,0,0,0.10)] dark:border-b-neutral-800 border-solid">
-                          <td className="w-[29px] h-[21px] pl-2 py-3">
+                          <td className="min-w-[60px] pl-2 py-3">
                             <div
                               className={`flex items-center justify-center rounded-lg ${
                                 model.rank === 1
@@ -432,7 +432,7 @@ export default function Leaderboard() {
                               </span>
                             </div>
                           </td>
-                          <td className="w-[200px] pl-[58px] py-3">
+                          <td className="min-w-[160px] pl-8 py-3">
                             <div className="text-sm font-normal leading-5 text-neutral-950 dark:text-white capitalize">
                               {model.model}
                             </div>
@@ -440,13 +440,13 @@ export default function Leaderboard() {
                               {model.type}
                             </div>
                           </td>
-                          <td className="w-[150px] text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-7 py-3">
+                          <td className="min-w-[120px] text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-4 py-3">
                             {model.organization}
                           </td>
-                          <td className="w-20 text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-5 py-3">
+                          <td className="min-w-[80px] text-sm font-normal leading-5 text-neutral-950 dark:text-white pl-3 py-3">
                             {model.score}
                           </td>
-                          <td className="w-[120px] pl-5 py-3">
+                          <td className="min-w-[100px] pl-3 py-3">
                             <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {model.cost}
                             </div>
@@ -456,12 +456,12 @@ export default function Leaderboard() {
                               </div>
                             )}
                           </td>
-                          <td className="w-auto min-w-9 h-[21px] border flex items-center justify-center ml-5 px-[8.66px] py-[2.67px] rounded-lg border-solid border-[rgba(0,0,0,0.10)] dark:border-neutral-800 py-3">
+                          <td className="min-w-[100px] h-[21px] border flex items-center justify-center ml-3 px-2 py-1 rounded-lg border-solid border-[rgba(0,0,0,0.10)] dark:border-neutral-800 py-3">
                             <span className="text-xs font-semibold leading-4 text-neutral-950 dark:text-white text-center">
                               {model.license}
                             </span>
                           </td>
-                          <td className="text-sm font-normal leading-5 text-neutral-950 dark:text-white py-3 pl-16">
+                          <td className="min-w-[100px] text-sm font-normal leading-5 text-neutral-950 dark:text-white py-3 pl-8">
                             {model.released}
                           </td>
                           <td className="flex gap-2 justify-end py-3">

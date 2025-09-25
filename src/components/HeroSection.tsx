@@ -36,7 +36,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className={`w-full h-[497px] flex flex-col items-center justify-center mt-[65px] px-20 py-0 max-md:h-auto max-md:min-h-[400px] max-md:px-10 max-sm:text-center max-sm:px-5`}
+      className={`w-full min-h-[400px] max-md:min-h-[300px] h-auto flex flex-col items-center justify-center mt-[65px] px-20 max-md:px-10 max-sm:px-4 max-sm:text-center`}
       style={
         isDark
           ? { backgroundColor: "#000" }
@@ -51,20 +51,22 @@ const HeroSection = () => {
         <span className="text-neutral-950 dark:text-white">Across Modalities</span>
       </h1>
 
-      <p className="text-xl font-normal leading-7 text-[#717182] dark:text-gray-300 text-center max-w-[670px] mb-10 max-sm:text-lg max-sm:leading-6">
+      <p className="text-xl font-normal leading-7 text-[#717182] dark:text-gray-300 text-center max-w-[670px] mb-10 max-md:text-lg max-md:leading-6 max-sm:text-base max-sm:leading-5">
         Data-driven, transparent benchmarks for text, image, audio, and
         multimodal AI models
       </p>
 
-      <div className="w-[672px] h-12 mb-6 max-md:w-full max-md:max-w-[500px]">
+      <div className="w-[672px] h-12 mb-6 max-md:w-full max-md:max-w-[500px] max-sm:w-full">
         <SearchInput onSearch={handleSearch} isDark={isDark} />
       </div>
 
-      <CategoryFilter
-        categories={categories}
-        onCategoryChange={handleCategoryChange}
-        isDark={isDark}
-      />
+      <div className="w-full flex justify-center">
+        <CategoryFilter
+          categories={categories}
+          onCategoryChange={handleCategoryChange}
+          isDark={isDark}
+        />
+      </div>
     </section>
   );
 };

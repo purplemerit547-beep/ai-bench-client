@@ -58,7 +58,7 @@ const FeaturedModels = () => {
   ];
 
   return (
-    <section className="w-full flex flex-col items-center bg-[#F6F3FF] dark:bg-[#232136] px-20 py-16 max-md:px-10 max-md:py-12 max-sm:px-5 max-sm:py-8">
+    <section className="w-full flex flex-col items-center bg-[#F6F3FF] dark:bg-[#232136] px-20 py-16 max-md:px-10 max-md:py-12 max-sm:px-4 max-sm:py-6">
       <div className="w-full max-w-screen-xl">
         <h2 className="text-3xl font-semibold leading-9 text-neutral-950 dark:text-white text-center mb-4 max-sm:text-2xl max-sm:leading-[30px]">
           Featured Models
@@ -68,9 +68,9 @@ const FeaturedModels = () => {
           Discover the best AI models across different categories and use cases
         </p>
         
-        <div className="flex gap-6 justify-center items-start max-md:flex-col max-md:items-center max-md:gap-8">
+        <div className="flex gap-6 justify-center items-start max-md:flex-col max-md:items-center max-md:gap-8 w-full">
           {models.map((model, index) => (
-            <div key={index} className="flex flex-col items-start">
+            <div key={index} className="flex flex-col items-start w-full max-w-md">
               <h3 className="text-lg font-normal leading-7 text-neutral-950 dark:text-white mb-4">
                 {model.categoryTitle}
               </h3>

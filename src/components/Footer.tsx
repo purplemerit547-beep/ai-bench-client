@@ -22,11 +22,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-[#F6F3FF] dark:bg-[#232136] pt-[48.67px] pb-[47.99px] px-20 border-t-[0.667px] border-t-[rgba(0,0,0,0.10)] border-solid max-md:p-10 max-sm:px-5 max-sm:py-8">
+    <footer className="w-full bg-[#F6F3FF] dark:bg-[#232136] px-20 pt-12 pb-12 border-t-[0.667px] border-t-[rgba(0,0,0,0.10)] border-solid max-md:px-10 max-md:pt-8 max-md:pb-8 max-sm:px-4 max-sm:pt-6 max-sm:pb-6">
       <div className="w-full max-w-screen-xl relative mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {footerSections.map((section, index) => (
-            <div key={index} className="max-md:mb-8 max-sm:mb-6">
+            <div key={index} className="mb-8 md:mb-0">
               <h4 className="text-base font-normal leading-6 text-neutral-950 dark:text-white mb-4">
                 {section.title}
               </h4>
@@ -51,7 +51,7 @@ const Footer = () => {
           ))}
         </div>
         
-        <div className="w-full flex items-center justify-center pt-[33px] border-t-[0.667px] border-t-[rgba(0,0,0,0.10)] border-solid max-md:pt-6 max-sm:pt-4">
+        <div className="w-full flex items-center justify-center pt-8 border-t-[0.667px] border-t-[rgba(0,0,0,0.10)] border-solid max-md:pt-6 max-sm:pt-4">
           <p className="text-sm font-normal leading-5 text-[#717182] dark:text-white text-center">
             © 2024 AIBench. All rights reserved.
           </p>

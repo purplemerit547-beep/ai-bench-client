@@ -31,7 +31,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
   isFree = false,
 }) => {
   return (
-    <article className="box-border w-full max-w-[389px] border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] flex flex-col justify-between max-md:w-full max-sm:p-4">
+    <article className="box-border w-full max-w-md border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] flex flex-col justify-between max-md:w-full max-sm:p-4">
       <header className="flex items-start justify-between mb-6">
         <div>
           <h3 className="text-neutral-950 dark:text-white text-xl font-semibold leading-7 mb-1 flex items-center gap-2">
@@ -151,7 +151,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
 // OverallScores component
 const OverallScores: React.FC = () => {
   return (
-    <section className="box-border w-full max-w-[592px] border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
+    <section className="box-border w-full max-w-xl border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
       <header className="mb-6">
         <h3 className="text-neutral-950 dark:text-white text-xl font-semibold leading-7 mb-2">
           Overall Scores
@@ -223,7 +223,7 @@ const OverallScores: React.FC = () => {
 // PerformanceRadar component
 const PerformanceRadar: React.FC = () => {
   return (
-    <section className="box-border w-full max-w-[592px] border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
+    <section className="box-border w-full max-w-xl border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
       <header className="mb-6">
         <h3 className="text-neutral-950 dark:text-white text-xl font-semibold leading-7 mb-2">
           Performance Radar
@@ -414,7 +414,7 @@ const DetailedComparison: React.FC = () => {
   };
 
   return (
-    <section className="box-border w-full max-w-[1216px] border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
+    <section className="box-border w-full max-w-5xl border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
       <header className="mb-6">
         <h3 className="text-neutral-950 dark:text-white text-xl font-semibold leading-7 mb-2">
           Detailed Comparison
@@ -521,7 +521,7 @@ const ModelComparisonPage = () => {
       <div className="box-border flex w-full min-h-screen flex-col justify-center items-start bg-white dark:bg-black">
         <div className="box-border flex w-full flex-col justify-start items-start bg-white dark:bg-black">
           <Navigation />
-          <main className="box-border flex w-full flex-col justify-center items-center min-h-[calc(100vh_-_65px_-_309px)] bg-[#F6F3FF] dark:bg-neutral-950 px-20 py-8 max-md:px-10 max-md:py-8 max-sm:p-5">
+          <main className="box-border flex w-full flex-col justify-center items-center min-h-[calc(100vh_-_65px_-_309px)] bg-[#F6F3FF] dark:bg-neutral-950 px-8 py-8 max-md:px-4 max-md:py-8 max-sm:px-2 max-sm:py-4">
             <div className="box-border w-full max-w-screen-xl relative">
               {/* Back Button */}
               <button className="box-border flex w-[187px] justify-start items-center gap-4 cursor-pointer mb-4 pl-3 pr-[11.699px] pt-[8.66px] pb-[8.67px] rounded-lg hover:bg-white/50 dark:hover:bg-neutral-800/60 transition-colors">

@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useIsMobile } from "../hooks/use-mobile";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+} from "./ui/sheet";
+import { Menu } from "lucide-react";
 
 const Navigation = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Initialize from body class
     return document.body.classList.contains("dark");
   });
+  const isMobile = useIsMobile();
 
   const toggleDarkMode = () => {
     setIsDarkMode((prev) => {
@@ -18,6 +25,81 @@ const Navigation = () => {
       return next;
     });
   };
+
+  // Nav links as a component for reuse
+  const NavLinks = () => (
+    <>
+      <NavLink
+        to="/"
+        end
+        className={({ isActive }) =>
+          `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
+          ${
+            isDarkMode
+              ? isActive
+                ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
+                : "text-gray-400 hover:text-white"
+              : isActive
+                ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+                : "text-[#717182] hover:text-neutral-950"
+          }`
+        }
+      >
+        Home
+      </NavLink>
+      <NavLink
+        to="/leaderboard"
+        className={({ isActive }) =>
+          `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
+          ${
+            isDarkMode
+              ? isActive
+                ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
+                : "text-gray-400 hover:text-white"
+              : isActive
+                ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+                : "text-[#717182] hover:text-neutral-950"
+          }`
+        }
+      >
+        Leaderboard
+      </NavLink>
+      <NavLink
+        to="/benchmarks"
+        className={({ isActive }) =>
+          `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
+          ${
+            isDarkMode
+              ? isActive
+                ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
+                : "text-gray-400 hover:text-white"
+              : isActive
+                ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+                : "text-[#717182] hover:text-neutral-950"
+          }`
+        }
+      >
+        Benchmarks
+      </NavLink>
+      <NavLink
+        to="/pricing"
+        className={({ isActive }) =>
+          `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
+          ${
+            isDarkMode
+              ? isActive
+                ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
+                : "text-gray-400 hover:text-white"
+              : isActive
+                ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+                : "text-[#717182] hover:text-neutral-950"
+          }`
+        }
+      >
+        Pricing
+      </NavLink>
+    </>
+  );
 
   return (
     <nav className="box-border flex items-center w-full h-16 px-20 py-4 max-md:px-10 max-sm:px-5 relative bg-white dark:bg-black text-neutral-950 dark:text-white border-b border-gray-200 dark:border-gray-700">
@@ -43,80 +125,38 @@ const Navigation = () => {
           AIBench
         </div>
       </div>
-      <div className="flex items-center justify-center w-full absolute left-0 top-0 h-full pointer-events-none">
-        <div className="flex items-center gap-6 pointer-events-auto">
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) =>
-              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
-              ${
-                isDarkMode
-                  ? isActive
-                    ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
-                    : "text-gray-400 hover:text-white"
-                  : isActive
-                    ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
-                    : "text-[#717182] hover:text-neutral-950"
-              }`
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/leaderboard"
-            className={({ isActive }) =>
-              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
-              ${
-                isDarkMode
-                  ? isActive
-                    ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
-                    : "text-gray-400 hover:text-white"
-                  : isActive
-                    ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
-                    : "text-[#717182] hover:text-neutral-950"
-              }`
-            }
-          >
-            Leaderboard
-          </NavLink>
-          <NavLink
-            to="/benchmarks"
-            className={({ isActive }) =>
-              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
-              ${
-                isDarkMode
-                  ? isActive
-                    ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
-                    : "text-gray-400 hover:text-white"
-                  : isActive
-                    ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
-                    : "text-[#717182] hover:text-neutral-950"
-              }`
-            }
-          >
-            Benchmarks
-          </NavLink>
-          <NavLink
-            to="/pricing"
-            className={({ isActive }) =>
-              `text-base font-normal leading-6 cursor-pointer transition-colors duration-200
-              ${
-                isDarkMode
-                  ? isActive
-                    ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
-                    : "text-gray-400 hover:text-white"
-                  : isActive
-                    ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
-                    : "text-[#717182] hover:text-neutral-950"
-              }`
-            }
-          >
-            Pricing
-          </NavLink>
+
+      {/* Desktop nav links */}
+      {!isMobile && (
+        <div className="flex items-center justify-center w-full absolute left-0 top-0 h-full pointer-events-none">
+          <div className="flex items-center gap-6 pointer-events-auto">
+            <NavLinks />
+          </div>
         </div>
-      </div>
-      <div className="ml-auto flex items-center z-10">
+      )}
+
+      {/* Mobile hamburger and sheet */}
+      {isMobile && (
+        <div className="ml-auto flex items-center z-10">
+          <Sheet>
+            <SheetTrigger asChild>
+              <button
+                className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 bg-transparent"
+                aria-label="Open navigation menu"
+                type="button"
+              >
+                <Menu className="w-7 h-7" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="flex flex-col gap-6 pt-16 w-64">
+              <NavLinks />
+            </SheetContent>
+          </Sheet>
+        </div>
+      )}
+
+      {/* Dark mode toggle always on right */}
+      <div className="ml-auto flex items-center z-10" style={isMobile ? { marginLeft: 0 } : {}}>
         <button
           onClick={toggleDarkMode}
           className={`relative flex items-center focus:outline-none w-20 h-10 rounded-full p-1 transition-colors duration-300 ${
