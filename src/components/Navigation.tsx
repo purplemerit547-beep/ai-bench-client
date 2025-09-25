@@ -5,6 +5,7 @@ import {
   Sheet,
   SheetTrigger,
   SheetContent,
+  SheetTitle,
 } from "./ui/sheet";
 import { Menu } from "lucide-react";
 
@@ -149,6 +150,9 @@ const Navigation = () => {
               </button>
             </SheetTrigger>
             <SheetContent side="right" className="flex flex-col gap-6 pt-16 w-64">
+              <span className="sr-only">
+                <SheetTitle>Menu</SheetTitle>
+              </span>
               <NavLinks />
             </SheetContent>
           </Sheet>
