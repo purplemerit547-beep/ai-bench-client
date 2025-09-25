@@ -35,12 +35,12 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ className = '' }) => {
 
   return (
     <div className={className}>
-      <label className="text-neutral-950 text-sm font-normal leading-none block mb-3">
+      <label className="text-neutral-950 dark:text-white text-sm font-normal leading-none block mb-3">
         Models to Compare
       </label>
       <div className="space-y-[15px]">
         {models.map((model) => (
-          <div key={model.id} className="flex items-stretch gap-2 text-sm text-neutral-950 font-normal leading-none">
+          <div key={model.id} className="flex items-stretch gap-2 text-sm text-neutral-950 dark:text-white font-normal leading-none">
             <button
               onClick={() => toggleModel(model.id)}
               className={`flex w-[13px] shrink-0 h-[13px] rounded-[3px] border transition-colors ${
@@ -71,8 +71,8 @@ const ChartControls: React.FC<ChartControlsProps> = ({ className = '' }) => {
   const [selectedBenchmark, setSelectedBenchmark] = useState('Overview');
 
   return (
-    <aside className={`bg-white border flex w-full flex-col mx-auto pt-6 pb-[151px] px-[25px] rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:mt-6 max-md:pb-[100px] max-md:px-5 ${className}`}>
-      <div className="flex items-stretch gap-2 text-base text-neutral-950 font-normal leading-none mb-9">
+    <aside className={`bg-white dark:bg-neutral-900 border flex w-full flex-col mx-auto pt-6 pb-[151px] px-[25px] rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:mt-6 max-md:pb-[100px] max-md:px-5 ${className}`}>
+      <div className="flex items-stretch gap-2 text-base text-neutral-950 dark:text-white font-normal leading-none mb-9">
         <img
           src="https://api.builder.io/api/v1/image/assets/35de5dc00516421d9aa405b4c562fade/bfb143761be4f4e487dcc09076eb425c251c4097?placeholderIfAbsent=true"
           alt="Chart Controls Icon"
@@ -83,7 +83,7 @@ const ChartControls: React.FC<ChartControlsProps> = ({ className = '' }) => {
         </h3>
       </div>
       <div className="mb-[30px]">
-        <label htmlFor="benchmark-select" className="text-neutral-950 text-sm font-normal leading-none block mb-3">
+        <label htmlFor="benchmark-select" className="text-neutral-950 dark:text-white text-sm font-normal leading-none block mb-3">
           Benchmark
         </label>
         <div className="relative">
@@ -91,7 +91,7 @@ const ChartControls: React.FC<ChartControlsProps> = ({ className = '' }) => {
             id="benchmark-select"
             value={selectedBenchmark}
             onChange={(e) => setSelectedBenchmark(e.target.value)}
-            className="bg-[rgba(246,243,255,1)] w-full flex items-stretch gap-5 text-sm text-neutral-950 font-normal whitespace-nowrap leading-none justify-between px-3 py-2.5 rounded-lg appearance-none cursor-pointer"
+            className="bg-[rgba(246,243,255,1)] dark:bg-neutral-900 w-full flex items-stretch gap-5 text-sm text-neutral-950 dark:text-white font-normal whitespace-nowrap leading-none justify-between px-3 py-2.5 rounded-lg appearance-none cursor-pointer"
           >
             <option value="Overview">Overview</option>
             <option value="Language">Language</option>
@@ -133,20 +133,20 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ className = '' }) => {
   const selectedModels = ['GPT-4o', 'Claude 3.5 Sonnet', 'Llama 3.1 405B', 'Gemini 1.5 Pro'];
 
   return (
-    <section className={`bg-white border flex w-full flex-col mx-auto pt-[27px] pb-[13px] px-[25px] rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:max-w-full max-md:mt-6 max-md:px-5 ${className}`}>
+    <section className={`bg-white dark:bg-neutral-900 border flex w-full flex-col mx-auto pt-[27px] pb-[13px] px-[25px] rounded-[14px] border-[rgba(0,0,0,0.1)] border-solid max-md:max-w-full max-md:mt-6 max-md:px-5 ${className}`}>
       <header className="mb-[31px]">
-        <h2 className="text-neutral-950 text-base font-semibold leading-none mb-[7px]">
+        <h2 className="text-neutral-950 dark:text-white text-base font-semibold leading-none mb-[7px]">
           Benchmark Overview
         </h2>
         <p className="text-[rgba(113,113,130,1)] text-base font-normal">
           Compare models across multiple benchmarks
         </p>
       </header>
-      <div className="flex items-stretch gap-2 text-xs text-[rgba(3,2,19,1)] font-semibold text-center leading-none mb-[22px]">
+      <div className="flex items-stretch gap-2 text-xs text-[rgba(3,2,19,1)] dark:text-neutral-100 font-semibold text-center leading-none mb-[22px]">
         {selectedModels.map((model) => (
           <div
             key={model}
-            className="bg-[rgba(246,243,255,1)] flex flex-col overflow-hidden items-stretch whitespace-nowrap justify-center px-[9px] py-[7px] rounded-lg"
+            className="bg-[rgba(246,243,255,1)] dark:bg-zinc-900 flex flex-col overflow-hidden items-stretch whitespace-nowrap justify-center px-[9px] py-[7px] rounded-lg"
           >
             <span>{model}</span>
           </div>
@@ -178,7 +178,7 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ className = '' }) => {
             </div>
           </div>
           <div className="border self-stretch shrink-0 h-px border-black border-solid max-md:max-w-full" />
-          <div className="flex w-[623px] max-w-full items-stretch gap-[40px_70px] text-base text-black font-normal leading-none ml-[11px] mt-2.5">
+          <div className="flex w-[623px] max-w-full items-stretch gap-[40px_70px] text-base text-black dark:text-white font-normal leading-none ml-[11px] mt-2.5">
             <span>GPT-4o</span>
             <span>Claude 3.5</span>
             <span className="grow shrink w-[91px]">
@@ -204,7 +204,7 @@ const BenchmarksPage = () => {
           <main className="bg-[rgba(246,243,255,1)] dark:bg-black flex w-full flex-col items-stretch pt-10 pb-10 max-md:max-w-full max-md:pb-6">
             <div className="self-center flex w-full max-w-[1216px] flex-col max-md:max-w-full">
               <header className="mb-[34px]">
-                <h1 className="text-neutral-950 text-3xl font-semibold leading-[1.2] mb-[29px]">
+                <h1 className="text-neutral-950 dark:text-white text-3xl font-semibold leading-[1.2] mb-[29px]">
                   AI Model Benchmarks
                 </h1>
                 <p className="text-[rgba(113,113,130,1)] text-base font-normal max-md:max-w-full">
