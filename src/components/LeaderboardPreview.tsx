@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import CategoryFilter from "./CategoryFilter";
 
 const LeaderboardPreview = () => {
+  const navigate = useNavigate();
   const categories = [
     "All",
     "Text",
@@ -146,7 +148,7 @@ const LeaderboardPreview = () => {
                     #{item.rank}
                   </span>
                 </div>
-                
+
                 <div className="flex-1 flex flex-col justify-center items-center">
                   <div className="text-sm font-normal leading-5 text-neutral-950 dark:text-white capitalize">
                     {item.model}
@@ -155,28 +157,28 @@ const LeaderboardPreview = () => {
                     {item.category}
                   </div>
                 </div>
-                
+
                 <div className="flex-1 text-sm font-normal leading-5 text-neutral-950 dark:text-white text-center">
                   {item.organization}
                 </div>
-                
+
                 <div className="flex-1 text-sm font-normal leading-5 text-neutral-950 dark:text-white text-center">
                   {item.score}
                 </div>
-                
+
                 <div className="min-w-[100px] h-[21px] border flex items-center justify-center px-2 py-1 rounded-lg border border-gray-300 dark:border-gray-700 bg-[#F1EBFF] dark:bg-[#232136]">
                   <span className="text-xs font-semibold leading-4 text-neutral-950 dark:text-white text-center">
                     {item.license}
                   </span>
                 </div>
-                
+
                 <div className="flex-1 flex gap-2 justify-end">
                   <button className="w-14 h-8 border flex items-center justify-center cursor-pointer transition-all duration-200 bg-white dark:bg-black rounded-lg border-solid border-[rgba(0,0,0,0.10)] hover:bg-gray-50 dark:hover:bg-black">
                     <span className="text-sm font-semibold leading-5 text-center text-neutral-950 dark:text-white">
                       View
                     </span>
                   </button>
-                
+
                   <button className="w-[82px] h-8 flex items-center justify-center cursor-pointer transition-all duration-200 bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-lg hover:opacity-90">
                     <span className="text-sm font-semibold leading-5 text-center text-white">
                       Compare
@@ -188,7 +190,10 @@ const LeaderboardPreview = () => {
           </div>
         </div>
 
-        <button className="w-[197px] h-9 flex items-center justify-center gap-[15.691px] cursor-pointer transition-all duration-200 mt-10 mx-auto bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-lg hover:opacity-90">
+        <button
+          className="w-[197px] h-9 flex items-center justify-center gap-[15.691px] cursor-pointer transition-all duration-200 mt-10 mx-auto bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-lg hover:opacity-90"
+          onClick={() => navigate("/leaderboard")}
+        >
           <span className="text-sm font-semibold leading-5 text-center text-white">
             View Full Leaderboard
           </span>
