@@ -152,7 +152,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
 // OverallScores component
 const OverallScores: React.FC = () => {
   return (
-    <section className="box-border w-full max-w-xl border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
+    <section className="box-border w-full border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
       <header className="mb-6">
         <h3 className="text-neutral-950 dark:text-white text-xl font-semibold leading-7 mb-2">
           Overall Scores
@@ -167,8 +167,7 @@ const OverallScores: React.FC = () => {
           className="min-w-[350px] w-full dark:bg-neutral-900 rounded-lg"
           style={{ maxWidth: "100%", overflowX: "auto" }}
           dangerouslySetInnerHTML={{
-            __html:
-              `<svg width="100%" height="320" viewBox="0 0 544 321" fill="none" xmlns="http://www.w3.org/2000/svg" class="bar-chart" style="box-sizing: border-box; max-width: 100%; height: 320px; margin-bottom: 24px; display: block; background: transparent;">
+            __html: `<svg width="100%" height="320" viewBox="0 0 544 321" fill="none" xmlns="http://www.w3.org/2000/svg" class="bar-chart" style="box-sizing: border-box; max-width: 100%; height: 320px; margin-bottom: 24px; display: block; background: transparent;">
                 <g class="grid-lines">
                   <path d="M65.6699 285.67H538.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
                   <path d="M65.6699 215.67H538.67" stroke="#CCCCCC" stroke-dasharray="3 3" class="light-grid"/>
@@ -239,8 +238,7 @@ const PerformanceRadar: React.FC = () => {
           className="min-w-[350px] w-full dark:bg-neutral-900 rounded-lg"
           style={{ maxWidth: "100%", overflowX: "auto" }}
           dangerouslySetInnerHTML={{
-            __html:
-              `<svg width="100%" height="320" viewBox="0 0 544 321" fill="none" xmlns="http://www.w3.org/2000/svg" class="radar-chart" style="box-sizing: border-box; max-width: 100%; height: 320px; margin-bottom: 24px; display: block; background: transparent;">
+            __html: `<svg width="100%" height="320" viewBox="0 0 544 321" fill="none" xmlns="http://www.w3.org/2000/svg" class="radar-chart" style="box-sizing: border-box; max-width: 100%; height: 320px; margin-bottom: 24px; display: block; background: transparent;">
                 <style>
                   @media (prefers-color-scheme: dark) {
                     .radar-chart .radar-grid { stroke: #333333 !important; }
@@ -273,8 +271,7 @@ const PerformanceRadar: React.FC = () => {
         <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 dark:text-white text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
           <div
             dangerouslySetInnerHTML={{
-              __html:
-                `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px">
+              __html: `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px">
                   <style>
                     @media (prefers-color-scheme: dark) { .legend-rect { fill: #fff !important; opacity: 0.8 !important; } }
                   </style>
@@ -289,8 +286,7 @@ const PerformanceRadar: React.FC = () => {
         <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 dark:text-white text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
           <div
             dangerouslySetInnerHTML={{
-              __html:
-                `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px">
+              __html: `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px">
                   <style>
                     @media (prefers-color-scheme: dark) { .legend-rect { fill: #fff !important; opacity: 0.8 !important; } }
                   </style>
@@ -305,8 +301,7 @@ const PerformanceRadar: React.FC = () => {
         <div className="flex h-6 justify-center items-end gap-1 text-neutral-950 dark:text-white text-center text-base font-normal leading-6 px-0 py-[1.33px] whitespace-nowrap">
           <div
             dangerouslySetInnerHTML={{
-              __html:
-                `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px">
+              __html: `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="legend-icon" style="box-sizing: border-box; width: 14px; height: 14px">
                   <style>
                     @media (prefers-color-scheme: dark) { .legend-rect { fill: #fff !important; opacity: 0.8 !important; } }
                   </style>
@@ -415,7 +410,7 @@ const DetailedComparison: React.FC = () => {
   };
 
   return (
-    <section className="box-border w-full max-w-5xl border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
+    <section className="box-border w-full border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] max-md:w-full max-sm:p-4 overflow-x-auto">
       <header className="mb-6">
         <h3 className="text-neutral-950 dark:text-white text-xl font-semibold leading-7 mb-2">
           Detailed Comparison
