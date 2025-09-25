@@ -56,7 +56,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
         {icon}
       </div>
       
-      <div className="w-[368px] h-[337px] border relative bg-white dark:bg-black p-[25px] rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:w-full max-sm:max-w-[350px]">
+      <div className="w-[368px] h-[337px] relative bg-white dark:bg-black p-[25px] rounded-xl border border-gray-300 dark:border-gray-700 max-sm:w-full max-sm:max-w-[350px]">
         <div className="flex items-start justify-between mb-2">
           <h4 className="text-lg font-semibold leading-7 text-neutral-950 dark:text-white">
             {title}
