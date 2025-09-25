@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useNavigate } from "react-router-dom";
 
 const modelData = [
   {
@@ -184,8 +185,9 @@ function RankBadge({ rank }: { rank: number }) {
 import React, { useState } from "react";
 
 export default function Leaderboard() {
+  const navigate = useNavigate();
   // State for compare bucket (max 3)
-  type ModelType = typeof modelData[number];
+  type ModelType = (typeof modelData)[number];
   const [compareBucket, setCompareBucket] = useState<ModelType[]>([]);
 
   // Add/remove model to/from compare bucket
@@ -345,54 +347,72 @@ export default function Leaderboard() {
                     return modelData.map((model, index) => (
                       <React.Fragment key={model.rank}>
                         {/* Insert compare bucket row only once, before the first selected model */}
-                        {compareBucket.length > 0 && index === firstSelectedIndex && (
-                          <tr>
-                            <td colSpan={8}>
-                              <div className="flex items-center justify-between my-2 bg-[#F1EBFF] border border-[rgba(0,0,0,0.10)] rounded-[10px] px-6 py-3">
-                                <div className="flex gap-2 flex-wrap items-center">
-                                  <span className="text-sm font-semibold text-neutral-950 mr-2">
-                                    Compare Models ({compareBucket.length}/3)
-                                  </span>
-                                  {compareBucket.map((selectedModel) => (
-                                    <div
-                                      key={selectedModel.rank}
-                                      className="flex items-center bg-white rounded-lg px-3 py-1 mr-1 border border-[#B18BEF]"
-                                    >
-                                      <span className="text-xs font-medium text-[#4B00A8] mr-2">
-                                        {selectedModel.model}
-                                      </span>
-                                      <button
-                                        className="ml-1 text-xs text-[#717182] hover:text-red-500"
-                                        onClick={() => handleRemoveModel(selectedModel.rank)}
-                                        title="Remove"
+                        {compareBucket.length > 0 &&
+                          index === firstSelectedIndex && (
+                            <tr>
+                              <td colSpan={8}>
+                                <div className="flex items-center justify-between my-2 bg-[#F1EBFF] border border-[rgba(0,0,0,0.10)] rounded-[10px] px-6 py-3">
+                                  <div className="flex gap-2 flex-wrap items-center">
+                                    <span className="text-sm font-semibold text-neutral-950 mr-2">
+                                      Compare Models ({compareBucket.length}/3)
+                                    </span>
+                                    {compareBucket.map((selectedModel) => (
+                                      <div
+                                        key={selectedModel.rank}
+                                        className="flex items-center bg-white rounded-lg px-3 py-1 mr-1 border border-[#B18BEF]"
                                       >
-                                        ×
-                                      </button>
-                                    </div>
-                                  ))}
+                                        <span className="text-xs font-medium text-[#4B00A8] mr-2">
+                                          {selectedModel.model}
+                                        </span>
+                                        <button
+                                          className="ml-1 text-xs text-[#717182] hover:text-red-500"
+                                          onClick={() =>
+                                            handleRemoveModel(
+                                              selectedModel.rank
+                                            )
+                                          }
+                                          title="Remove"
+                                        >
+                                          ×
+                                        </button>
+                                      </div>
+                                    ))}
+                                  </div>
+                                  <div className="flex gap-2 items-center">
+                                    <button
+                                      className="text-xs font-semibold text-[#4B00A8] px-3 py-1 rounded hover:bg-white border border-transparent hover:border-[#B18BEF] transition"
+                                      onClick={handleClearAll}
+                                    >
+                                      Clear All
+                                    </button>
+                                    <button
+                                      className={`min-w-[90px] px-5 h-9 flex items-center justify-center cursor-pointer transition-all duration-200 bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-lg hover:opacity-90 text-sm font-semibold leading-5 text-center text-white${
+                                        compareBucket.length > 1 ? " pr-6" : ""
+                                      }`}
+                                      style={{
+                                        minWidth:
+                                          compareBucket.length > 0 ? 110 : 90,
+                                      }}
+                                      disabled={compareBucket.length === 0}
+                                      // Use React Router navigation for SPA routing
+                                      // Use React Router navigation for SPA routing
+                                      onClick={() => {
+                                        if (compareBucket.length > 0) {
+                                          navigate("/comparison/modelComparison");
+                                        }
+                                      }}
+                                    >
+                                      Compare
+                                      {compareBucket.length > 0
+                                        ? ` (${compareBucket.length})`
+                                        : ""}
+                                    </button>
+                                  </div>
                                 </div>
-                                <div className="flex gap-2 items-center">
-                                  <button
-                                    className="text-xs font-semibold text-[#4B00A8] px-3 py-1 rounded hover:bg-white border border-transparent hover:border-[#B18BEF] transition"
-                                    onClick={handleClearAll}
-                                  >
-                                    Clear All
-                                  </button>
-                                  <button
-                                    className={`min-w-[90px] px-5 h-9 flex items-center justify-center cursor-pointer transition-all duration-200 bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-lg hover:opacity-90 text-sm font-semibold leading-5 text-center text-white${compareBucket.length > 1 ? " pr-6" : ""}`}
-                                    style={{ minWidth: compareBucket.length > 0 ? 110 : 90 }}
-                                    disabled={compareBucket.length === 0}
-                                  >
-                                    Compare{compareBucket.length > 0 ? ` (${compareBucket.length})` : ""}
-                                  </button>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                        )}
-                        <tr
-                          className="border-b-[0.667px] border-b-[rgba(0,0,0,0.10)] border-solid"
-                        >
+                              </td>
+                            </tr>
+                          )}
+                        <tr className="border-b-[0.667px] border-b-[rgba(0,0,0,0.10)] border-solid">
                           <td className="w-[29px] h-[21px] pl-2 py-3">
                             <div
                               className={`flex items-center justify-center rounded-lg ${
@@ -403,7 +423,9 @@ export default function Leaderboard() {
                             >
                               <span
                                 className={`text-xs font-semibold leading-4 text-center ${
-                                  model.rank === 1 ? "text-white" : "text-[#030213]"
+                                  model.rank === 1
+                                    ? "text-white"
+                                    : "text-[#030213]"
                                 }`}
                               >
                                 #{model.rank}
@@ -429,7 +451,9 @@ export default function Leaderboard() {
                               {model.cost}
                             </div>
                             {model.cost !== "Free" && (
-                              <div className="text-xs text-gray-500">tokens</div>
+                              <div className="text-xs text-gray-500">
+                                tokens
+                              </div>
                             )}
                           </td>
                           <td className="w-auto min-w-9 h-[21px] border flex items-center justify-center ml-5 px-[8.66px] py-[2.67px] rounded-lg border-solid border-[rgba(0,0,0,0.10)] py-3">
@@ -453,13 +477,16 @@ export default function Leaderboard() {
                                   : "bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] hover:opacity-90"
                               }`}
                               disabled={
-                                !compareBucket.some((m) => m.rank === model.rank) &&
-                                compareBucket.length >= 3
+                                !compareBucket.some(
+                                  (m) => m.rank === model.rank
+                                ) && compareBucket.length >= 3
                               }
                               onClick={() => handleCompareClick(model)}
                             >
                               <span className="text-sm font-semibold leading-5 text-center text-white">
-                                {compareBucket.some((m) => m.rank === model.rank)
+                                {compareBucket.some(
+                                  (m) => m.rank === model.rank
+                                )
                                   ? "Remove"
                                   : "Compare"}
                               </span>
