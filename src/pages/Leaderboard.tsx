@@ -181,7 +181,31 @@ function RankBadge({ rank }: { rank: number }) {
   );
 }
 
+import React, { useState } from "react";
+
 export default function Leaderboard() {
+  // State for compare bucket (max 3)
+  type ModelType = typeof modelData[number];
+  const [compareBucket, setCompareBucket] = useState<ModelType[]>([]);
+
+  // Add/remove model to/from compare bucket
+  const handleCompareClick = (model: ModelType) => {
+    const isSelected = compareBucket.some((m) => m.rank === model.rank);
+    if (isSelected) {
+      setCompareBucket(compareBucket.filter((m) => m.rank !== model.rank));
+    } else if (compareBucket.length < 3) {
+      setCompareBucket([...compareBucket, model]);
+    }
+  };
+
+  // Remove single model from compare bucket
+  const handleRemoveModel = (rank: number) => {
+    setCompareBucket(compareBucket.filter((m) => m.rank !== rank));
+  };
+
+  // Clear all
+  const handleClearAll = () => setCompareBucket([]);
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F1EBFF" }}>
       <Navigation />
@@ -314,72 +338,128 @@ export default function Leaderboard() {
                   </tr>
                 </thead>
                 <tbody>
-                  {modelData.map((model, index) => (
-                    <tr
-                      key={model.rank}
-                      className="border-b-[0.667px] border-b-[rgba(0,0,0,0.10)] border-solid"
-                    >
-                      <td className="w-[29px] h-[21px] pl-2 py-3">
-                        <div
-                          className={`flex items-center justify-center rounded-lg ${
-                            model.rank === 1
-                              ? "bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)]"
-                              : "bg-[#F1EBFF]"
-                          }`}
-                        >
-                          <span
-                            className={`text-xs font-semibold leading-4 text-center ${
-                              model.rank === 1 ? "text-white" : "text-[#030213]"
-                            }`}
-                          >
-                            #{model.rank}
-                          </span>
-                        </div>
-                      </td>
-                      <td className="w-[200px] pl-[58px] py-3">
-                        <div className="text-sm font-normal leading-5 text-neutral-950 capitalize">
-                          {model.model}
-                        </div>
-                        <div className="text-sm font-normal leading-5 text-[#717182] capitalize">
-                          {model.type}
-                        </div>
-                      </td>
-                      <td className="w-[150px] text-sm font-normal leading-5 text-neutral-950 pl-7 py-3">
-                        {model.organization}
-                      </td>
-                      <td className="w-20 text-sm font-normal leading-5 text-neutral-950 pl-5 py-3">
-                        {model.score}
-                      </td>
-                      <td className="w-[120px] pl-5 py-3">
-                        <div className="text-sm font-medium text-gray-900">
-                          {model.cost}
-                        </div>
-                        {model.cost !== "Free" && (
-                          <div className="text-xs text-gray-500">tokens</div>
+                  {(() => {
+                    const firstSelectedIndex = modelData.findIndex((model) =>
+                      compareBucket.some((m) => m.rank === model.rank)
+                    );
+                    return modelData.map((model, index) => (
+                      <React.Fragment key={model.rank}>
+                        {/* Insert compare bucket row only once, before the first selected model */}
+                        {compareBucket.length > 0 && index === firstSelectedIndex && (
+                          <tr>
+                            <td colSpan={8}>
+                              <div className="flex items-center gap-4 my-2 bg-[#F1EBFF] border border-[rgba(0,0,0,0.10)] rounded-[10px] px-6 py-3">
+                                <button
+                                  className="text-xs font-semibold text-[#4B00A8] px-3 py-1 rounded hover:bg-white border border-transparent hover:border-[#B18BEF] transition"
+                                  onClick={handleClearAll}
+                                >
+                                  Clear All
+                                </button>
+                                <span className="text-sm font-semibold text-neutral-950 mr-2">
+                                  Compare Models ({compareBucket.length}/3)
+                                </span>
+                                <div className="flex gap-2 flex-wrap">
+                                  {compareBucket.map((selectedModel) => (
+                                    <div
+                                      key={selectedModel.rank}
+                                      className="flex items-center bg-white rounded-lg px-3 py-1 mr-1 border border-[#B18BEF]"
+                                    >
+                                      <span className="text-xs font-medium text-[#4B00A8] mr-2">
+                                        {selectedModel.model}
+                                      </span>
+                                      <button
+                                        className="ml-1 text-xs text-[#717182] hover:text-red-500"
+                                        onClick={() => handleRemoveModel(selectedModel.rank)}
+                                        title="Remove"
+                                      >
+                                        ×
+                                      </button>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
                         )}
-                      </td>
-                      <td className="w-auto min-w-9 h-[21px] border flex items-center justify-center ml-5 px-[8.66px] py-[2.67px] rounded-lg border-solid border-[rgba(0,0,0,0.10)] py-3">
-                        <span className="text-xs font-semibold leading-4 text-neutral-950 text-center">
-                          {model.license}
-                        </span>
-                      </td>
-                      <td className="text-sm font-normal leading-5 text-neutral-950 py-3 pl-16">
-                        {model.released}
-                      </td>
-                      <td className="flex gap-2 justify-end py-3">
-                        <button className="w-14 h-8 border flex items-center justify-center cursor-pointer transition-all duration-200 bg-white rounded-lg border-solid border-[rgba(0,0,0,0.10)] hover:bg-gray-50">
-                          <span className="text-sm font-semibold leading-5 text-center text-neutral-950">
-                            View
-                          </span>
-                        </button>
-                        <button className="w-[82px] h-8 flex items-center justify-center cursor-pointer transition-all duration-200 bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-lg hover:opacity-90">
-                          <span className="text-sm font-semibold leading-5 text-center text-white">
-                            Compare
-                          </span>
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
+                        <tr
+                          className="border-b-[0.667px] border-b-[rgba(0,0,0,0.10)] border-solid"
+                        >
+                          <td className="w-[29px] h-[21px] pl-2 py-3">
+                            <div
+                              className={`flex items-center justify-center rounded-lg ${
+                                model.rank === 1
+                                  ? "bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)]"
+                                  : "bg-[#F1EBFF]"
+                              }`}
+                            >
+                              <span
+                                className={`text-xs font-semibold leading-4 text-center ${
+                                  model.rank === 1 ? "text-white" : "text-[#030213]"
+                                }`}
+                              >
+                                #{model.rank}
+                              </span>
+                            </div>
+                          </td>
+                          <td className="w-[200px] pl-[58px] py-3">
+                            <div className="text-sm font-normal leading-5 text-neutral-950 capitalize">
+                              {model.model}
+                            </div>
+                            <div className="text-sm font-normal leading-5 text-[#717182] capitalize">
+                              {model.type}
+                            </div>
+                          </td>
+                          <td className="w-[150px] text-sm font-normal leading-5 text-neutral-950 pl-7 py-3">
+                            {model.organization}
+                          </td>
+                          <td className="w-20 text-sm font-normal leading-5 text-neutral-950 pl-5 py-3">
+                            {model.score}
+                          </td>
+                          <td className="w-[120px] pl-5 py-3">
+                            <div className="text-sm font-medium text-gray-900">
+                              {model.cost}
+                            </div>
+                            {model.cost !== "Free" && (
+                              <div className="text-xs text-gray-500">tokens</div>
+                            )}
+                          </td>
+                          <td className="w-auto min-w-9 h-[21px] border flex items-center justify-center ml-5 px-[8.66px] py-[2.67px] rounded-lg border-solid border-[rgba(0,0,0,0.10)] py-3">
+                            <span className="text-xs font-semibold leading-4 text-neutral-950 text-center">
+                              {model.license}
+                            </span>
+                          </td>
+                          <td className="text-sm font-normal leading-5 text-neutral-950 py-3 pl-16">
+                            {model.released}
+                          </td>
+                          <td className="flex gap-2 justify-end py-3">
+                            <button className="w-14 h-8 border flex items-center justify-center cursor-pointer transition-all duration-200 bg-white rounded-lg border-solid border-[rgba(0,0,0,0.10)] hover:bg-gray-50">
+                              <span className="text-sm font-semibold leading-5 text-center text-neutral-950">
+                                View
+                              </span>
+                            </button>
+                            <button
+                              className={`w-[82px] h-8 flex items-center justify-center cursor-pointer transition-all duration-200 rounded-lg ${
+                                compareBucket.some((m) => m.rank === model.rank)
+                                  ? "bg-[#717182] opacity-80"
+                                  : "bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] hover:opacity-90"
+                              }`}
+                              disabled={
+                                !compareBucket.some((m) => m.rank === model.rank) &&
+                                compareBucket.length >= 3
+                              }
+                              onClick={() => handleCompareClick(model)}
+                            >
+                              <span className="text-sm font-semibold leading-5 text-center text-white">
+                                {compareBucket.some((m) => m.rank === model.rank)
+                                  ? "Remove"
+                                  : "Compare"}
+                              </span>
+                            </button>
+                          </td>
+                        </tr>
+                      </React.Fragment>
+                    ));
+                  })()}
                 </tbody>
               </table>
             </div>
