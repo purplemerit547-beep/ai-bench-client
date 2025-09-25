@@ -45,7 +45,9 @@ const ModelHeader = () => {
             />
             <div className="my-auto">Official Docs</div>
           </button>
-          <button className="bg-[rgba(3,2,19,1)] flex flex-col items-stretch text-white justify-center px-4 py-[11px] rounded-lg hover:bg-[rgba(3,2,19,0.9)] transition-colors">
+          <button
+            className="flex flex-col items-stretch justify-center px-4 py-[11px] rounded-lg bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] hover:opacity-90 transition-all duration-200 text-white font-semibold"
+          >
             <div>Add to Compare</div>
           </button>
         </div>
