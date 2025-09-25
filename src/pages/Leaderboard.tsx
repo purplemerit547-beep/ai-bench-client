@@ -348,17 +348,11 @@ export default function Leaderboard() {
                         {compareBucket.length > 0 && index === firstSelectedIndex && (
                           <tr>
                             <td colSpan={8}>
-                              <div className="flex items-center gap-4 my-2 bg-[#F1EBFF] border border-[rgba(0,0,0,0.10)] rounded-[10px] px-6 py-3">
-                                <button
-                                  className="text-xs font-semibold text-[#4B00A8] px-3 py-1 rounded hover:bg-white border border-transparent hover:border-[#B18BEF] transition"
-                                  onClick={handleClearAll}
-                                >
-                                  Clear All
-                                </button>
-                                <span className="text-sm font-semibold text-neutral-950 mr-2">
-                                  Compare Models ({compareBucket.length}/3)
-                                </span>
-                                <div className="flex gap-2 flex-wrap">
+                              <div className="flex items-center justify-between my-2 bg-[#F1EBFF] border border-[rgba(0,0,0,0.10)] rounded-[10px] px-6 py-3">
+                                <div className="flex gap-2 flex-wrap items-center">
+                                  <span className="text-sm font-semibold text-neutral-950 mr-2">
+                                    Compare Models ({compareBucket.length}/3)
+                                  </span>
                                   {compareBucket.map((selectedModel) => (
                                     <div
                                       key={selectedModel.rank}
@@ -376,6 +370,21 @@ export default function Leaderboard() {
                                       </button>
                                     </div>
                                   ))}
+                                </div>
+                                <div className="flex gap-2 items-center">
+                                  <button
+                                    className="text-xs font-semibold text-[#4B00A8] px-3 py-1 rounded hover:bg-white border border-transparent hover:border-[#B18BEF] transition"
+                                    onClick={handleClearAll}
+                                  >
+                                    Clear All
+                                  </button>
+                                  <button
+                                    className={`min-w-[90px] px-5 h-9 flex items-center justify-center cursor-pointer transition-all duration-200 bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] rounded-lg hover:opacity-90 text-sm font-semibold leading-5 text-center text-white${compareBucket.length > 1 ? " pr-6" : ""}`}
+                                    style={{ minWidth: compareBucket.length > 0 ? 110 : 90 }}
+                                    disabled={compareBucket.length === 0}
+                                  >
+                                    Compare{compareBucket.length > 0 ? ` (${compareBucket.length})` : ""}
+                                  </button>
                                 </div>
                               </div>
                             </td>
