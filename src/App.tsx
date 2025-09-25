@@ -9,6 +9,7 @@ import Leaderboard from "./pages/Leaderboard";
 import NotFound from "./pages/NotFound";
 import BenchmarksPage from "./pages/Benchmarks";
 import ModelComparisonPage from "./pages/comparison/modelComparison";
+import ModelView from "./pages/viewPage/modelView";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/benchmarks" element={<BenchmarksPage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/comparison/modelComparison" element={<ModelComparisonPage />} />
+          <Route path="/viewPage/modelView" element={<ModelView />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
