@@ -1,10 +1,12 @@
 // Only keep one import for React and Navigation/Footer
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 // Inline ModelHeader
 const ModelHeader = () => {
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col items-stretch max-md:max-w-full dark:bg-neutral-900">
       <div className="flex items-stretch gap-[17px] text-sm text-neutral-950 dark:text-white font-semibold text-center leading-none ml-3 max-md:ml-2.5">
@@ -13,7 +15,10 @@ const ModelHeader = () => {
           alt="Back arrow"
           className="aspect-[1] object-contain w-4 shrink-0"
         />
-        <button className="basis-auto my-auto hover:underline">
+        <button
+          className="basis-auto my-auto hover:underline"
+          onClick={() => navigate("/leaderboard")}
+        >
           Back to Leaderboard
         </button>
       </div>
