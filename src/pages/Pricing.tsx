@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Select,
   SelectContent,
@@ -439,6 +440,7 @@ const CostEstimates: React.FC = () => {
 // PerformanceAnalysis component
 const PerformanceAnalysis: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Cost vs Score");
+  const navigate = useNavigate();
 
   return (
     <section className="box-border w-full border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] max-sm:p-4">
@@ -703,6 +705,7 @@ const PerformanceAnalysis: React.FC = () => {
                   <th className="text-left p-3">Cost per 1M tokens</th>
                   <th className="text-left p-3">Performance Score</th>
                   <th className="text-left p-3">Efficiency</th>
+                  <th className="text-left p-3">View</th>
                 </tr>
               </thead>
               <tbody>
@@ -713,6 +716,17 @@ const PerformanceAnalysis: React.FC = () => {
                   <td className="p-3">$1.25</td>
                   <td className="p-3">85%</td>
                   <td className="p-3">70.2</td>
+                  <td className="p-3">
+                    <button
+                      className="px-4 py-1 rounded bg-[#F1EBFF] text-[#4B00A8] dark:bg-[#23232b] dark:text-white border border-[#B18BEF] hover:bg-[#B18BEF] hover:text-white transition-all duration-150"
+                      onClick={() =>
+                        navigate("/viewPage/modelView")
+                      }
+                      type="button"
+                    >
+                      View
+                    </button>
+                  </td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-3">GPT-4o</td>
@@ -721,6 +735,17 @@ const PerformanceAnalysis: React.FC = () => {
                   <td className="p-3">$2.50</td>
                   <td className="p-3">92%</td>
                   <td className="p-3">36.7</td>
+                  <td className="p-3">
+                    <button
+                      className="px-4 py-1 rounded bg-[#F1EBFF] text-[#4B00A8] dark:bg-[#23232b] dark:text-white border border-[#B18BEF] hover:bg-[#B18BEF] hover:text-white transition-all duration-150"
+                      onClick={() =>
+                        navigate("/viewPage/modelView")
+                      }
+                      type="button"
+                    >
+                      View
+                    </button>
+                  </td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-3">Claude 3.5 Sonnet</td>
@@ -729,6 +754,17 @@ const PerformanceAnalysis: React.FC = () => {
                   <td className="p-3">$3.00</td>
                   <td className="p-3">90%</td>
                   <td className="p-3">30.5</td>
+                  <td className="p-3">
+                    <button
+                      className="px-4 py-1 rounded bg-[#F1EBFF] text-[#4B00A8] dark:bg-[#23232b] dark:text-white border border-[#B18BEF] hover:bg-[#B18BEF] hover:text-white transition-all duration-150"
+                      onClick={() =>
+                        navigate("/viewPage/modelView")
+                      }
+                      type="button"
+                    >
+                      View
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
