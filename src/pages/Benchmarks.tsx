@@ -189,7 +189,7 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ className = "" }) => {
                 <div
                   key={data.model}
                   className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] flex flex-col items-center"
-                  style={{ marginLeft: index === 0 ? "0" : undefined }}
+                  style={{ marginLeft: index === 0 ? "20px" : "0" }}
                 >
                   <div
                     className="flex shrink-0 w-full mx-auto rounded-lg"
@@ -214,10 +214,18 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ className = "" }) => {
           </div>
           <div className="border self-stretch shrink-0 h-px border-black border-solid max-md:max-w-full" />
           <div className="flex gap-5 flex-nowrap w-max min-w-full text-base text-black dark:text-white font-normal leading-none ml-3 mt-2.5 max-md:ml-0 overflow-x-auto">
-            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">GPT-4o</span>
-            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">Claude 3.5</span>
-            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">Sonnet Llama</span>
-            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">Llama 3.1 405B</span>
+            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">
+              GPT-4o
+            </span>
+            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">
+              Claude 3.5
+            </span>
+            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">
+              Sonnet Llama
+            </span>
+            <span className="min-w-[90px] max-w-[120px] w-[90px] sm:w-[111px] text-center">
+              Llama 3.1 405B
+            </span>
           </div>
         </div>
       </div>
