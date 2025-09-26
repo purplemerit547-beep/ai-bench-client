@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useIsMobile } from "../hooks/use-mobile";
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetTitle,
-} from "./ui/sheet";
+import { Sheet, SheetTrigger, SheetContent, SheetTitle } from "./ui/sheet";
 import { Menu } from "lucide-react";
 
 const Navigation = () => {
@@ -41,8 +36,8 @@ const Navigation = () => {
                 ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
                 : "text-gray-400 hover:text-white"
               : isActive
-                ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
-                : "text-[#717182] hover:text-neutral-950"
+              ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+              : "text-[#717182] hover:text-neutral-950"
           }`
         }
       >
@@ -58,8 +53,8 @@ const Navigation = () => {
                 ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
                 : "text-gray-400 hover:text-white"
               : isActive
-                ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
-                : "text-[#717182] hover:text-neutral-950"
+              ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+              : "text-[#717182] hover:text-neutral-950"
           }`
         }
       >
@@ -75,8 +70,8 @@ const Navigation = () => {
                 ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
                 : "text-gray-400 hover:text-white"
               : isActive
-                ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
-                : "text-[#717182] hover:text-neutral-950"
+              ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+              : "text-[#717182] hover:text-neutral-950"
           }`
         }
       >
@@ -92,8 +87,8 @@ const Navigation = () => {
                 ? "text-white font-bold underline underline-offset-8 decoration-purple-400"
                 : "text-gray-400 hover:text-white"
               : isActive
-                ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
-                : "text-[#717182] hover:text-neutral-950"
+              ? "text-neutral-950 font-semibold underline underline-offset-8 decoration-purple-600"
+              : "text-[#717182] hover:text-neutral-950"
           }`
         }
       >
@@ -149,7 +144,10 @@ const Navigation = () => {
                 <Menu className="w-7 h-7" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="flex flex-col gap-6 pt-16 w-64">
+            <SheetContent
+              side="right"
+              className="flex flex-col gap-6 pt-16 w-64"
+            >
               <span className="sr-only">
                 <SheetTitle>Menu</SheetTitle>
               </span>
@@ -160,14 +158,15 @@ const Navigation = () => {
       )}
 
       {/* Dark mode toggle always on right */}
-      <div className="ml-auto flex items-center z-10" style={isMobile ? { marginLeft: 0 } : {}}>
+      <div
+        className="ml-auto flex items-center z-10"
+        style={isMobile ? { marginLeft: 0 } : {}}
+      >
         <button
           onClick={toggleDarkMode}
           className={`relative flex items-center focus:outline-none w-20 h-10 rounded-full p-1 transition-colors duration-300
             max-md:w-14 max-md:h-8 max-md:p-0.5
-            ${
-              isDarkMode ? "bg-[#232136]" : "bg-[#F1EBFF] dark:bg-black"
-            }`}
+            ${isDarkMode ? "bg-[#232136]" : "bg-[#F1EBFF] dark:bg-black"}`}
           aria-label={
             isDarkMode ? "Switch to light mode" : "Switch to dark mode"
           }
@@ -178,7 +177,7 @@ const Navigation = () => {
               max-md:w-6 max-md:h-6 max-md:top-1.5
               ${
                 isDarkMode
-                  ? "bg-gray-800 left-1 transform translate-x-8 max-md:translate-x-6"
+                  ? "bg-gray-800 left-1 transform translate-x-10 max-md:translate-x-6"
                   : "bg-white dark:bg-black left-1 transform translate-x-0"
               }`}
           >
