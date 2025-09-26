@@ -409,7 +409,7 @@ const Index = () => {
               {/* Capabilities Graph - full width below cards */}
               <section className="bg-white dark:bg-neutral-900 border flex flex-col text-base mt-8 px-[25px] py-[26px] rounded-[14px] border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.10)] border-solid max-md:max-w-full max-md:px-5">
                 <h2 className="text-neutral-950 dark:text-white font-semibold leading-none">
-                  Capabilities
+                  Capabilities Graph
                 </h2>
                 <p className="text-[rgba(113,113,130,1)] dark:text-white font-normal mt-[11px]">
                   Key strengths and supported features
