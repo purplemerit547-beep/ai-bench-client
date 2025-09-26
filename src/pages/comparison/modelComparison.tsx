@@ -31,6 +31,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
   isOpenSource = false,
   isFree = false,
 }) => {
+  const navigate = useNavigate();
   return (
     <article className="box-border w-full max-w-md border bg-white dark:bg-neutral-900 p-6 rounded-[14px] border-solid border-[rgba(0,0,0,0.10)] dark:border-[rgba(255,255,255,0.10)] flex flex-col justify-between max-md:w-full max-sm:p-4">
       <header className="flex items-start justify-between mb-6">
@@ -134,7 +135,11 @@ const ModelCard: React.FC<ModelCardProps> = ({
         </div>
       </div>
 
-      <button className="flex w-full justify-center items-center gap-2.5 cursor-pointer border bg-white dark:bg-neutral-900 py-2 px-4 rounded-lg border-solid border-[#6931C9] dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-900/40 transition-colors">
+      <button
+        className="flex w-full justify-center items-center gap-2.5 cursor-pointer border bg-white dark:bg-neutral-900 py-2 px-4 rounded-lg border-solid border-[#6931C9] dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-900/40 transition-colors"
+        onClick={() => navigate("/viewPage/modelView")}
+        type="button"
+      >
         <div
           dangerouslySetInnerHTML={{
             __html:
