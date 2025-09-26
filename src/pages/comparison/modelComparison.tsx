@@ -522,16 +522,35 @@ const ModelComparisonPage = () => {
             <div className="box-border w-full max-w-screen-xl relative">
               {/* Back Button */}
               <button
-                className="box-border flex w-[187px] justify-start items-center gap-4 cursor-pointer mb-4 pl-3 pr-[11.699px] pt-[8.66px] pb-[8.67px] rounded-lg hover:bg-white/50 dark:hover:bg-neutral-800/60 transition-colors"
+                className="flex items-center gap-2 text-sm text-neutral-950 dark:text-white font-semibold text-center leading-none px-3 py-2 rounded-lg transition-all duration-200 w-fit group focus:outline-none mb-4
+                  hover:bg-[rgba(177,139,239,0.15)] hover:shadow-[0_2px_8px_0_rgba(177,139,239,0.15)]
+                  dark:hover:bg-[rgba(177,139,239,0.25)] dark:hover:shadow-[0_2px_8px_0_rgba(177,139,239,0.25)]"
                 onClick={() => navigate("/leaderboard")}
+                type="button"
               >
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      '<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="back-arrow" style="box-sizing: border-box; width: 16px; height: 16px"> <path d="M8.00016 13.3367L3.3335 8.66999L8.00016 4.00333" stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.6668 8.66998H3.3335" stroke="#0A0A0A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path> </svg>',
-                  }}
-                />
-                <span className="text-neutral-950 dark:text-white text-sm font-medium">
+                <span
+                  className="flex items-center transition-transform duration-200 group-hover:-translate-x-1"
+                  aria-hidden="true"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      d="M11.25 15L5.25 9L11.25 3"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-neutral-950 dark:text-white"
+                    />
+                  </svg>
+                </span>
+                <span className="transition-colors duration-200 group-hover:underline">
                   Back to Leaderboard
                 </span>
               </button>

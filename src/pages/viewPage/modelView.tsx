@@ -9,19 +9,40 @@ const ModelHeader = () => {
   const navigate = useNavigate();
   return (
     <section className="flex flex-col items-stretch max-md:max-w-full dark:bg-neutral-900">
-      <div className="flex items-stretch gap-[17px] text-sm text-neutral-950 dark:text-white font-semibold text-center leading-none ml-3 max-md:ml-2.5">
-        <img
-          src="https://api.builder.io/api/v1/image/assets/35de5dc00516421d9aa405b4c562fade/00a916c108d9e0f404ad17f0d4f46f1fb6b71e87?placeholderIfAbsent=true"
-          alt="Back arrow"
-          className="aspect-[1] object-contain w-4 shrink-0"
-        />
-        <button
-          className="basis-auto my-auto hover:underline"
-          onClick={() => navigate("/leaderboard")}
+      <button
+        className="flex items-center gap-2 text-sm text-neutral-950 dark:text-white font-semibold text-center leading-none ml-3 max-md:ml-2.5 px-3 py-2 rounded-lg transition-all duration-200 w-fit group focus:outline-none
+          hover:bg-[rgba(177,139,239,0.15)] hover:shadow-[0_2px_8px_0_rgba(177,139,239,0.15)]
+          dark:hover:bg-[rgba(177,139,239,0.25)] dark:hover:shadow-[0_2px_8px_0_rgba(177,139,239,0.25)]"
+        onClick={() => navigate("/leaderboard")}
+        type="button"
+      >
+        <span
+          className="flex items-center transition-transform duration-200 group-hover:-translate-x-1"
+          aria-hidden="true"
         >
+          {/* Arrow SVG with color adaptation */}
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-4 h-4"
+          >
+            <path
+              d="M11.25 15L5.25 9L11.25 3"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-neutral-950 dark:text-white"
+            />
+          </svg>
+        </span>
+        <span className="transition-colors duration-200 group-hover:underline">
           Back to Leaderboard
-        </button>
-      </div>
+        </span>
+      </button>
       <div className="flex w-full items-stretch gap-5 flex-wrap justify-between mt-[34px] max-md:max-w-full">
         <div className="flex flex-col items-stretch whitespace-nowrap">
           <h1 className="text-neutral-950 dark:text-white text-3xl font-semibold leading-[1.2]">
