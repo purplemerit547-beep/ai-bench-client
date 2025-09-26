@@ -10,7 +10,7 @@ const ModelHeader = () => {
   return (
     <section className="flex flex-col items-stretch max-md:max-w-full dark:bg-neutral-900">
       <button
-        className="flex items-center gap-2 text-sm text-neutral-950 dark:text-white font-semibold text-center leading-none ml-3 max-md:ml-2.5 px-3 py-2 rounded-lg transition-all duration-200 w-fit group focus:outline-none
+        className="flex items-center gap-2 text-sm text-neutral-950 dark:text-white font-semibold text-center leading-none ml-0 px-3 py-2 rounded-lg transition-all duration-200 w-fit group focus:outline-none
           hover:bg-[rgba(177,139,239,0.15)] hover:shadow-[0_2px_8px_0_rgba(177,139,239,0.15)]
           dark:hover:bg-[rgba(177,139,239,0.25)] dark:hover:shadow-[0_2px_8px_0_rgba(177,139,239,0.25)]"
         onClick={() => navigate("/leaderboard")}
@@ -432,15 +432,3 @@ const Index = () => {
 };
 
 export default Index;
-
-// (Removed duplicate BenchmarkTable definition and export)
-
-// (Removed duplicate CapabilitiesSection definition and export)
-
-// (Removed duplicate ModelHeader definition and export)
-
-// (Removed duplicate ModelInfo definition and export)
-
-// (Removed duplicate PerformanceOverview definition and export)
-
-// (Removed duplicate PricingCard definition and export)
