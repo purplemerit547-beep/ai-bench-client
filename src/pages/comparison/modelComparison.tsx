@@ -53,7 +53,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
         </div>
         <div className="flex flex-col gap-1">
           {isAPI && (
-            <div className="flex w-full flex-col justify-center items-center text-[#030213] dark:text-purple-200 text-center text-sm font-semibold leading-5 h-[21px] gap-1 bg-purple-100 dark:bg-purple-900 px-2 py-[2.67px] rounded-lg">
+            <div className="inline-flex min-w-[60px] flex-row justify-center items-center text-[#030213] dark:text-purple-200 text-center text-xs font-semibold leading-5 h-[20px] gap-1 bg-purple-100 dark:bg-purple-900 px-2 py-1 rounded-md border border-purple-200 dark:border-purple-700 shadow-sm">
               <div className="flex items-center gap-1">
                 <div
                   dangerouslySetInnerHTML={{
@@ -68,7 +68,7 @@ const ModelCard: React.FC<ModelCardProps> = ({
             </div>
           )}
           {isOpenSource && (
-            <div className="flex w-[107px] flex-col justify-center items-center text-[#030213] dark:text-green-200 text-center text-sm font-semibold leading-5 h-[21px] gap-1 bg-green-100 dark:bg-green-900 px-2 py-[2.67px] rounded-lg">
+            <div className="inline-flex min-w-[60px] flex-row justify-center items-center text-[#030213] dark:text-green-200 text-center text-xs font-semibold leading-5 h-[20px] gap-1 bg-green-100 dark:bg-green-900 px-2 py-1 rounded-md border border-green-200 dark:border-green-700 shadow-sm">
               <div className="flex items-center gap-1">
                 <div
                   dangerouslySetInnerHTML={{
