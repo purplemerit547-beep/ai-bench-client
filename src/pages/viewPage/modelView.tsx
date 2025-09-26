@@ -71,9 +71,7 @@ const ModelHeader = () => {
             />
             <div className="my-auto">Official Docs</div>
           </button>
-          <button
-            className="flex flex-col items-stretch justify-center px-4 py-[11px] rounded-lg bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] hover:opacity-90 transition-all duration-200 text-white font-semibold"
-          >
+          <button className="flex flex-col items-stretch justify-center px-4 py-[11px] rounded-lg bg-[linear-gradient(90deg,_#B18BEF_0%,_#4B00A8_100%)] hover:opacity-90 transition-all duration-200 text-white font-semibold">
             <div>Add to Compare</div>
           </button>
         </div>
@@ -250,9 +248,13 @@ const BenchmarkTable = () => {
                 key={benchmark.name}
                 className="flex w-full items-stretch gap-[40px_100px] leading-none flex-wrap pl-2 pr-20 py-3 max-md:max-w-full max-md:pr-5"
               >
-                <td className="text-neutral-950 dark:text-white">{benchmark.name}</td>
+                <td className="text-neutral-950 dark:text-white">
+                  {benchmark.name}
+                </td>
                 <td className="flex items-stretch gap-[40px_56px]">
-                  <div className="text-neutral-950 dark:text-white">{benchmark.score}</div>
+                  <div className="text-neutral-950 dark:text-white">
+                    {benchmark.score}
+                  </div>
                   <div className="text-[rgba(113,113,130,1)] dark:text-white basis-auto grow shrink">
                     {benchmark.description}
                   </div>
@@ -313,7 +315,9 @@ const ModelInfo = () => {
 const PricingCard = () => {
   return (
     <section className="bg-white dark:bg-neutral-900 border flex w-full flex-col items-stretch font-semibold mt-6 px-[25px] py-[27px] rounded-[14px] border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.10)] border-solid max-md:px-5">
-      <h2 className="text-neutral-950 dark:text-white text-base leading-none">Pricing</h2>
+      <h2 className="text-neutral-950 dark:text-white text-base leading-none">
+        Pricing
+      </h2>
       <p className="text-[rgba(113,113,130,1)] dark:text-white text-base font-normal mt-2.5">
         Cost information for API usage
       </p>
@@ -328,7 +332,9 @@ const PricingCard = () => {
           </div>
         </div>
         <div className="border flex flex-col items-center flex-1 px-8 py-[23px] rounded-[10px] border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.10)] border-solid max-md:px-5">
-          <div className="text-neutral-950 dark:text-white text-2xl leading-none">$60</div>
+          <div className="text-neutral-950 dark:text-white text-2xl leading-none">
+            $60
+          </div>
           <div className="text-[rgba(113,113,130,1)] dark:text-white text-sm leading-5 mt-[9px]">
             per 1M output
             <br />
@@ -347,33 +353,50 @@ const PricingCard = () => {
 // Inline CapabilitiesSection
 const CapabilitiesSection = () => {
   return (
-    <>
-      <section className="bg-white dark:bg-neutral-900 border flex items-stretch gap-2 text-xs text-neutral-950 dark:text-white font-semibold leading-none mt-6 pl-[25px] pr-[77px] py-[27px] rounded-[14px] border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.10)] border-solid max-md:px-5">
-        <div className="flex flex-col">
-          <h2 className="text-base dark:text-white font-normal leading-none">Capabilities</h2>
-          <div className="self-stretch flex items-stretch gap-2 text-center mt-7">
-            <div className="border flex flex-col overflow-hidden items-stretch justify-center px-2.5 py-[5px] rounded-lg border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.10)] border-solid">
-              <div className="dark:text-white">Deep Reasoning</div>
-            </div>
-            <div className="border flex flex-col overflow-hidden items-stretch justify-center px-2.5 py-[5px] rounded-lg border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.10)] border-solid">
-              <div className="dark:text-white">Problem Solving</div>
-            </div>
-          </div>
-          <div className="flex items-stretch gap-2 whitespace-nowrap text-center mt-2">
-            <div className="border flex flex-col overflow-hidden items-stretch justify-center px-[9px] py-1.5 rounded-lg border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.10)] border-solid">
-              <div className="dark:text-white">Science</div>
-            </div>
-            <div className="border flex flex-col overflow-hidden items-stretch justify-center px-[9px] py-1.5 rounded-lg border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.10)] border-solid">
-              <div className="dark:text-white">Code</div>
-            </div>
-          </div>
-        </div>
-        <div className="border flex flex-col overflow-hidden items-stretch whitespace-nowrap text-center justify-center my-auto px-2.5 py-1.5 rounded-lg border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.10)] border-solid">
-          <div className="dark:text-white">Math</div>
-        </div>
-      </section>
+    <section className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-6 mt-6">
+      <h2 className="text-lg font-normal text-neutral-900 dark:text-white mb-6">
+        Capabilities
+      </h2>
 
-    </>
+      <div className="flex flex-col gap-3">
+        {/* First row */}
+        <div className="flex gap-3">
+          <div className="border border-neutral-200 dark:border-neutral-700 rounded-lg px-4 py-3 bg-white dark:bg-neutral-800 flex-1 text-center">
+            <span className="text-sm font-medium text-neutral-900 dark:text-white">
+              Deep Reasoning
+            </span>
+          </div>
+          <div className="border border-neutral-200 dark:border-neutral-700 rounded-lg px-4 py-3 bg-white dark:bg-neutral-800 flex-1 text-center">
+            <span className="text-sm font-medium text-neutral-900 dark:text-white">
+              Problem Solving
+            </span>
+          </div>
+        </div>
+
+        {/* Second row */}
+        <div className="flex gap-3">
+          <div className="border border-neutral-200 dark:border-neutral-700 rounded-lg px-4 py-3 bg-white dark:bg-neutral-800 flex-1 text-center">
+            <span className="text-sm font-medium text-neutral-900 dark:text-white">
+              Science
+            </span>
+          </div>
+          <div className="border border-neutral-200 dark:border-neutral-700 rounded-lg px-4 py-3 bg-white dark:bg-neutral-800 flex-1 text-center">
+            <span className="text-sm font-medium text-neutral-900 dark:text-white">
+              Code
+            </span>
+          </div>
+        </div>
+
+        {/* Third row - single centered item */}
+        <div className="flex justify-center">
+          <div className="border border-neutral-200 dark:border-neutral-700 rounded-lg px-6 py-3 bg-white dark:bg-neutral-800 text-center min-w-[120px]">
+            <span className="text-sm font-medium text-neutral-900 dark:text-white">
+              Math
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
@@ -418,7 +441,7 @@ const Index = () => {
                   src="https://api.builder.io/api/v1/image/assets/35de5dc00516421d9aa405b4c562fade/6e7f949b5ced7938b19d13d7dabf97cd635df70f?placeholderIfAbsent=true"
                   alt="Capabilities visualization"
                   className="aspect-[4.55] object-contain w-full self-stretch mt-[26px] max-md:max-w-full"
-                  style={{ maxWidth: '100%' }}
+                  style={{ maxWidth: "100%" }}
                 />
               </section>
             </div>
